@@ -16,7 +16,6 @@ Generate shareable multi-day meal plans with calorie and macro targets.
 - Allergens & dislikes filtering (by tags, groups, or ingredient names)
 - 1–14 day plans · 2–6 meals/day
 - Single-file **HTML export** (easy to share)
-- Clean, minimalist **JV Fit** branding
 
 ---
 
@@ -74,7 +73,7 @@ On Streamlit Cloud:
 ## 👩‍💻 Author
 
 **Jelena Vučetić**
-🏀 Former pro athlete · 🎓 Python & AI Developer
+🏀 Former pro athlete · 🎓 Junior Python & AI Developer
 📍 Based in Montenegro
 
 * [🌐 GitHub](https://github.com/vucko23)
