@@ -1,0 +1,344 @@
+[
+  {
+    "name": "Oats",
+    "group": "grains",
+    "portion_g": 50,
+    "kcal": 190,
+    "protein": 6.6,
+    "carbs": 32.8,
+    "fat": 3.4,
+    "tags": [
+      "vegetarian",
+      "vegan",
+      "gluten"
+    ]
+  },
+  {
+    "name": "Greek Yogurt 2%",
+    "group": "dairy",
+    "portion_g": 170,
+    "kcal": 120,
+    "protein": 17,
+    "carbs": 6,
+    "fat": 3,
+    "tags": [
+      "vegetarian"
+    ]
+  },
+  {
+    "name": "Banana",
+    "group": "fruit",
+    "portion_g": 120,
+    "kcal": 105,
+    "protein": 1.3,
+    "carbs": 27,
+    "fat": 0.4,
+    "tags": [
+      "vegetarian",
+      "vegan",
+      "gluten-free"
+    ]
+  },
+  {
+    "name": "Blueberries",
+    "group": "fruit",
+    "portion_g": 100,
+    "kcal": 57,
+    "protein": 0.7,
+    "carbs": 14.5,
+    "fat": 0.3,
+    "tags": [
+      "vegetarian",
+      "vegan",
+      "gluten-free"
+    ]
+  },
+  {
+    "name": "Eggs (2)",
+    "group": "protein",
+    "portion_g": 100,
+    "kcal": 155,
+    "protein": 13,
+    "carbs": 1.1,
+    "fat": 11,
+    "tags": [
+      "vegetarian"
+    ]
+  },
+  {
+    "name": "Chicken Breast",
+    "group": "protein",
+    "portion_g": 150,
+    "kcal": 248,
+    "protein": 46,
+    "carbs": 0,
+    "fat": 5.3,
+    "tags": []
+  },
+  {
+    "name": "Salmon",
+    "group": "protein",
+    "portion_g": 150,
+    "kcal": 280,
+    "protein": 34,
+    "carbs": 0,
+    "fat": 15,
+    "tags": []
+  },
+  {
+    "name": "Tofu",
+    "group": "protein",
+    "portion_g": 150,
+    "kcal": 120,
+    "protein": 14,
+    "carbs": 3.5,
+    "fat": 6.9,
+    "tags": [
+      "vegetarian",
+      "vegan"
+    ]
+  },
+  {
+    "name": "Chickpeas (cooked)",
+    "group": "legumes",
+    "portion_g": 150,
+    "kcal": 240,
+    "protein": 12,
+    "carbs": 36,
+    "fat": 4,
+    "tags": [
+      "vegetarian",
+      "vegan",
+      "gluten-free"
+    ]
+  },
+  {
+    "name": "Quinoa (cooked)",
+    "group": "grains",
+    "portion_g": 180,
+    "kcal": 222,
+    "protein": 8,
+    "carbs": 39,
+    "fat": 3.6,
+    "tags": [
+      "vegetarian",
+      "vegan",
+      "gluten-free"
+    ]
+  },
+  {
+    "name": "Brown Rice (cooked)",
+    "group": "grains",
+    "portion_g": 180,
+    "kcal": 216,
+    "protein": 5,
+    "carbs": 45,
+    "fat": 1.8,
+    "tags": [
+      "vegetarian",
+      "vegan",
+      "gluten",
+      "gluten-free"
+    ]
+  },
+  {
+    "name": "Wholegrain Bread (2 slices)",
+    "group": "grains",
+    "portion_g": 70,
+    "kcal": 180,
+    "protein": 7,
+    "carbs": 32,
+    "fat": 3,
+    "tags": [
+      "vegetarian"
+    ]
+  },
+  {
+    "name": "Avocado (1/2)",
+    "group": "fat",
+    "portion_g": 70,
+    "kcal": 112,
+    "protein": 1.4,
+    "carbs": 6,
+    "fat": 10.5,
+    "tags": [
+      "vegetarian",
+      "vegan",
+      "gluten-free"
+    ]
+  },
+  {
+    "name": "Olive Oil (1 tbsp)",
+    "group": "fat",
+    "portion_g": 14,
+    "kcal": 119,
+    "protein": 0,
+    "carbs": 0,
+    "fat": 13.5,
+    "tags": [
+      "vegetarian",
+      "vegan",
+      "gluten-free"
+    ]
+  },
+  {
+    "name": "Almonds (handful)",
+    "group": "nuts",
+    "portion_g": 28,
+    "kcal": 164,
+    "protein": 6,
+    "carbs": 6,
+    "fat": 14,
+    "tags": [
+      "vegetarian",
+      "vegan",
+      "gluten-free"
+    ]
+  },
+  {
+    "name": "Spinach",
+    "group": "vegetables",
+    "portion_g": 100,
+    "kcal": 23,
+    "protein": 2.9,
+    "carbs": 3.6,
+    "fat": 0.4,
+    "tags": [
+      "vegetarian",
+      "vegan",
+      "gluten-free"
+    ]
+  },
+  {
+    "name": "Tomato",
+    "group": "vegetables",
+    "portion_g": 120,
+    "kcal": 22,
+    "protein": 1,
+    "carbs": 4.8,
+    "fat": 0.2,
+    "tags": [
+      "vegetarian",
+      "vegan",
+      "gluten-free"
+    ]
+  },
+  {
+    "name": "Cucumber",
+    "group": "vegetables",
+    "portion_g": 100,
+    "kcal": 16,
+    "protein": 0.7,
+    "carbs": 3.6,
+    "fat": 0.1,
+    "tags": [
+      "vegetarian",
+      "vegan",
+      "gluten-free"
+    ]
+  },
+  {
+    "name": "Apple",
+    "group": "fruit",
+    "portion_g": 150,
+    "kcal": 78,
+    "protein": 0.4,
+    "carbs": 21,
+    "fat": 0.2,
+    "tags": [
+      "vegetarian",
+      "vegan",
+      "gluten-free"
+    ]
+  },
+  {
+    "name": "Cottage Cheese (low-fat)",
+    "group": "dairy",
+    "portion_g": 150,
+    "kcal": 140,
+    "protein": 24,
+    "carbs": 6,
+    "fat": 2,
+    "tags": [
+      "vegetarian"
+    ]
+  },
+  {
+    "name": "Lentils (cooked)",
+    "group": "legumes",
+    "portion_g": 150,
+    "kcal": 198,
+    "protein": 15,
+    "carbs": 36,
+    "fat": 0.8,
+    "tags": [
+      "vegetarian",
+      "vegan",
+      "gluten-free"
+    ]
+  },
+  {
+    "name": "Sweet Potato (baked)",
+    "group": "vegetables",
+    "portion_g": 180,
+    "kcal": 162,
+    "protein": 3.6,
+    "carbs": 37,
+    "fat": 0.2,
+    "tags": [
+      "vegetarian",
+      "vegan",
+      "gluten-free"
+    ]
+  },
+  {
+    "name": "Broccoli (steamed)",
+    "group": "vegetables",
+    "portion_g": 150,
+    "kcal": 52,
+    "protein": 4.3,
+    "carbs": 10,
+    "fat": 0.6,
+    "tags": [
+      "vegetarian",
+      "vegan",
+      "gluten-free"
+    ]
+  },
+  {
+    "name": "Tortilla Whole Wheat (1)",
+    "group": "grains",
+    "portion_g": 60,
+    "kcal": 140,
+    "protein": 4,
+    "carbs": 24,
+    "fat": 3.5,
+    "tags": [
+      "vegetarian"
+    ]
+  },
+  {
+    "name": "Hummus",
+    "group": "legumes",
+    "portion_g": 50,
+    "kcal": 166,
+    "protein": 4.8,
+    "carbs": 14.3,
+    "fat": 10.6,
+    "tags": [
+      "vegetarian",
+      "vegan",
+      "gluten-free"
+    ]
+  },
+  {
+    "name": "Tuna (canned in water)",
+    "group": "protein",
+    "portion_g": 120,
+    "kcal": 144,
+    "protein": 32,
+    "carbs": 0,
+    "fat": 1,
+    "tags": []
+  }
+]
