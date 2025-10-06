@@ -3,19 +3,61 @@ import json, random, math, datetime, os
 
 st.set_page_config(
     page_title="JV Fit Meal Plan Generator",
-    page_icon="logo.png",
+    page_icon="logo_favicon.png",
     layout="wide"
 )
 
+# --- Brand styling (CSS + HTML block) ---
 st.markdown("""
-    <style>
-    body { background-color: #F9FAF9; color: #2C3E50; }
-    .main-title { font-size: 2.4em; font-weight: 800; color: #2C3E50; text-align: center; margin-bottom: 0.2em; }
-    .subtitle { font-size: 1.05em; text-align: center; color: #5f6b7a; margin-bottom: 1.4em; }
-    .stButton button { background: linear-gradient(90deg, #5DC2A2, #FFD77A); color: white; border-radius: 10px; font-weight: 600; border: none; }
-    .stDownloadButton button { background: linear-gradient(90deg, #FFD77A, #5DC2A2); color: white; border-radius: 10px; font-weight: 700; border: none; }
-    </style>
+<style>
+.main-title {
+    font-size: 2.4em;
+    font-weight: 800;
+    color: #e5e7eb;
+    margin: 0;
+}
+.subtitle {
+    font-size: 1.05em;
+    color: #9ca3af;
+}
+.brand-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: 6px 0 14px 0;
+}
+.logo-img {
+    width: 64px;
+    height: 64px;
+}
+</style>
 """, unsafe_allow_html=True)
+
+brand_block = """
+<div class="brand-row">
+  <img class="logo-img" src="logo_favicon.png" alt="JV Fit logo"/>
+  <div>
+    <div class="main-title">Meal Plan Generator</div>
+    <div class="subtitle">Personalized nutrition plans by <b>Jelena Vučetić</b></div>
+  </div>
+</div>
+"""
+
+st.markdown(brand_block, unsafe_allow_html=True)
+
+
+st.markdown("""
+<style>
+.main-title { font-size: 2.4em; font-weight: 800; color: #e5e7eb; margin: 0; }
+.subtitle { font-size: 1.05em; color: #9ca3af; }
+.brand-row { display:flex; align-items:center; justify-content:center; gap:14px; margin: 6px 0 14px 0; }
+.logo-img { width: 64px; height: 64px; }
+</style>
+""", unsafe_allow_html=True)
+
+st.markdown(brand_block, unsafe_allow_html=True)
+
 
 LANG = st.session_state.get("LANG", "EN")
 labels = {
