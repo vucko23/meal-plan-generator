@@ -7,7 +7,13 @@ st.set_page_config(
     layout="wide"
 )
 
-# --- JV Fit header (jednom!) ---
+LANG = st.session_state.get("LANG", "EN")
+labels = {
+    "EN": {"title":"🥗 Meal Plan Generator","caption":"Generate a shareable multi-day meal plan with calories & macros.","sidebar_prefs":"Preferences","days":"Days","kcal":"Daily calories (base)","meals":"Meals per day","diet":"Diet","protein":"Protein %","carbs":"Carbs %","fat":"Fat %","max_items":"Max items per meal","allergens":"Exclude allergens (tags)","groups":"Exclude food groups","dislikes":"Dislikes (comma-separated names)","lang":"Language","profile":"Profile","custom":"Custom","cut":"Cut (-15% kcal, higher protein)","maintain":"Maintain (balanced)","bulk":"Bulk (+15% kcal, higher carbs)","plan_header":"Plan — {days} days at {kcal} kcal/day (effective: {eff_kcal})","download":"⬇️ Download as HTML","tip":"Tip: Send the downloaded HTML via WhatsApp/Email, or host it on Netlify/GitHub Pages to share as a link.","macros_error":"Protein % + Carbs % must be ≤ 100.","about_header":"About this app","about_lines":"🏋️‍♀️ Flexible meal plans with macro targets  \n🌱 Diets: omnivore, vegetarian, vegan, gluten-free  \n🧮 Profiles: Cut / Maintain / Bulk  \n💡 Created by <b>Jelena Vučetić</b>","day":"Day","meal":"Meal"},
+    "SR": {"title":"🥗 Generator jelovnika","caption":"Napravi višednevni plan ishrane sa kalorijama i makroima — spreman za deljenje.","sidebar_prefs":"Podešavanja","days":"Broj dana","kcal":"Dnevne kalorije (osnovna vrednost)","meals":"Obroka dnevno","diet":"Dijeta","protein":"Proteini %","carbs":"Ugljeni hidrati %","fat":"Masti %","max_items":"Maks. namirnica po obroku","allergens":"Isključi alergene (tagovi)","groups":"Isključi grupe namirnica","dislikes":"Ne volim (imena odvojena zarezom)","lang":"Jezik","profile":"Profil","custom":"Prilagođeno","cut":"Deficit (-15% kcal, više proteina)","maintain":"Održavanje (izbalansirano)","bulk":"Suficit (+15% kcal, više UH)","plan_header":"Plan — {days} dana @ {kcal} kcal/dan (efektivno: {eff_kcal})","download":"⬇️ Preuzmi kao HTML","tip":"Savjet: Pošalji HTML preko WhatsApp/E-mail ili hostuj na Netlify/GitHub Pages kao link.","macros_error":"Zbir Proteini% + UH% mora biti ≤ 100.","about_header":"O aplikaciji","about_lines":"🏋️‍♀️ Fleksibilni jelovnici sa makro ciljevima  \n🌱 Dijete: omnivore, vegetarijanska, veganska, bez glutena  \n🧮 Profili: Deficit / Održavanje / Suficit  \n💡 Autor: <b>Jelena Vučetić</b>","day":"Dan","meal":"Obrok"}
+}
+def L(key): return labels[st.session_state.get("LANG","EN")][key]
+    # --- JV Fit header (jednom!) ---
 outer_left, outer_center, outer_right = st.columns([1, 3, 1])
 with outer_center:
     left, right = st.columns([1, 6])
@@ -29,14 +35,6 @@ with outer_center:
         )
 
 st.caption(L("caption"))
-
-LANG = st.session_state.get("LANG", "EN")
-labels = {
-    "EN": {"title":"🥗 Meal Plan Generator","caption":"Generate a shareable multi-day meal plan with calories & macros.","sidebar_prefs":"Preferences","days":"Days","kcal":"Daily calories (base)","meals":"Meals per day","diet":"Diet","protein":"Protein %","carbs":"Carbs %","fat":"Fat %","max_items":"Max items per meal","allergens":"Exclude allergens (tags)","groups":"Exclude food groups","dislikes":"Dislikes (comma-separated names)","lang":"Language","profile":"Profile","custom":"Custom","cut":"Cut (-15% kcal, higher protein)","maintain":"Maintain (balanced)","bulk":"Bulk (+15% kcal, higher carbs)","plan_header":"Plan — {days} days at {kcal} kcal/day (effective: {eff_kcal})","download":"⬇️ Download as HTML","tip":"Tip: Send the downloaded HTML via WhatsApp/Email, or host it on Netlify/GitHub Pages to share as a link.","macros_error":"Protein % + Carbs % must be ≤ 100.","about_header":"About this app","about_lines":"🏋️‍♀️ Flexible meal plans with macro targets  \n🌱 Diets: omnivore, vegetarian, vegan, gluten-free  \n🧮 Profiles: Cut / Maintain / Bulk  \n💡 Created by <b>Jelena Vučetić</b>","day":"Day","meal":"Meal"},
-    "SR": {"title":"🥗 Generator jelovnika","caption":"Napravi višednevni plan ishrane sa kalorijama i makroima — spreman za deljenje.","sidebar_prefs":"Podešavanja","days":"Broj dana","kcal":"Dnevne kalorije (osnovna vrednost)","meals":"Obroka dnevno","diet":"Dijeta","protein":"Proteini %","carbs":"Ugljeni hidrati %","fat":"Masti %","max_items":"Maks. namirnica po obroku","allergens":"Isključi alergene (tagovi)","groups":"Isključi grupe namirnica","dislikes":"Ne volim (imena odvojena zarezom)","lang":"Jezik","profile":"Profil","custom":"Prilagođeno","cut":"Deficit (-15% kcal, više proteina)","maintain":"Održavanje (izbalansirano)","bulk":"Suficit (+15% kcal, više UH)","plan_header":"Plan — {days} dana @ {kcal} kcal/dan (efektivno: {eff_kcal})","download":"⬇️ Preuzmi kao HTML","tip":"Savjet: Pošalji HTML preko WhatsApp/E-mail ili hostuj na Netlify/GitHub Pages kao link.","macros_error":"Zbir Proteini% + UH% mora biti ≤ 100.","about_header":"O aplikaciji","about_lines":"🏋️‍♀️ Fleksibilni jelovnici sa makro ciljevima  \n🌱 Dijete: omnivore, vegetarijanska, veganska, bez glutena  \n🧮 Profili: Deficit / Održavanje / Suficit  \n💡 Autor: <b>Jelena Vučetić</b>","day":"Dan","meal":"Obrok"}
-}
-def L(key): return labels[st.session_state.get("LANG","EN")][key]
-
 def load_foods(path):
     with open(path, "r") as f:
         return json.load(f)
