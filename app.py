@@ -208,9 +208,7 @@ st.session_state["LANG"] = lang_choice
 
 c1, c2, c3 = st.columns([1,3,1])
 with c2:
-    st.image("logo.png", width=72)
-    st.markdown("""<div class="main-title">Meal Plan Generator</div>
-    <div class="subtitle">Personalized nutrition plans by <b>Jelena Vučetić</b></div>""", unsafe_allow_html=True)
+    st.markdown(brand_block, unsafe_allow_html=True)
 st.caption(L("caption"))
 
 with st.sidebar:
