@@ -1,13 +1,32 @@
+# JV Fit — Meal Plan Generator
 
-# Meal Plan Mini App (Streamlit) — v2
+Personalized nutrition plans by **Jelena Vučetić**.  
+Generate shareable multi-day meal plans with calorie & macro targets.
 
-Features:
-- **Allergen/Dislikes filter** (exclude by tags, groups, or names).
-- **SR/EN language toggle** in the UI.
-- **Predefined profiles**: Cut (-15% kcal, higher protein), Maintain (balanced), Bulk (+15% kcal, higher carbs).
-- Download **single-file HTML** (share via chat or host as a link).
+[![Deployed on Streamlit Cloud](https://img.shields.io/badge/Deployed%20on-Streamlit%20Cloud-FF4B4B?logo=streamlit&logoColor=white)](https://meal-plan-generator23.streamlit.app)
 
-## Run locally
+---
+
+## ✨ Features
+- EN/SR language switch
+- Profiles: **Cut / Maintain / Bulk** (auto-adjust kcal and macros)
+- Allergens & dislikes filtering (by tags, groups, or names)
+- 1–14 day plans, 2–6 meals/day
+- Single-file **HTML export** (easy to share)
+- Clean, pastel **JV Fit** branding
+
+## 🧠 Tech Stack
+**Python**, **Streamlit**, **JSON**, **HTML** export
+
+## 🚀 Live Demo
+Open the app here: **https://meal-plan-generator23.streamlit.app**
+
+## 🖼️ Preview
+Add a screenshot to `images/app_preview.png` and it will show here:
+
+![JV Fit App Preview](images/app_preview.png)
+
+## 🛠️ Run Locally
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
@@ -15,11 +34,15 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-## Share as a link
-- **Streamlit Community Cloud**: push to GitHub and deploy via https://share.streamlit.io (app file `app.py`).
-- **Netlify static**: use the app's **Download as HTML**, then upload `meal_plan.html` to https://app.netlify.com/drop.
-- **Google Drive**: upload the HTML and share the view link.
+## 📤 Deploy
+- Push this folder to GitHub
+- Go to https://share.streamlit.io → New app → pick your repo → `app.py`
+- Streamlit builds automatically and gives you a public URL
 
-## Notes
-- If filters are too strict and the pool gets tiny, the app will warn and relax filters to avoid failures.
-- Not medical advice.
+## 🔗 Custom Subdomain
+On Streamlit Cloud: **Manage app → Settings → Advanced → Custom subdomain**  
+Example: `jvfit-mealplan` → https://jvfit-mealplan.streamlit.app
+
+---
+
+**Author:** Jelena Vučetić · [GitHub](https://github.com/vucko23)

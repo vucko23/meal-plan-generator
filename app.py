@@ -1,108 +1,29 @@
-
 import streamlit as st
 import json, random, math, datetime, os
 
-# ----------------------- Page + Styling -----------------------
 st.set_page_config(
-    page_title="Meal Plan Generator",
-    page_icon="🥗",
+    page_title="JV Fit Meal Plan Generator",
+    page_icon="logo.png",
     layout="wide"
 )
 
 st.markdown("""
     <style>
-    body {
-        background-color: #f8fafc;
-        color: #2f3640;
-    }
-    .main-title { font-size: 2.3em; font-weight: 700; color: #2c3e50; text-align: center; margin-bottom: 0.3em; }
-    .subtitle { font-size: 1.05em; text-align: center; color: #7f8c8d; margin-bottom: 1.5em; }
-    .stButton button {
-        background: linear-gradient(90deg, #6dd5ed, #2193b0);
-        color: white; border-radius: 10px; font-weight: 600; border: none;
-    }
-    .stDownloadButton button {
-        background: linear-gradient(90deg, #f7971e, #ffd200);
-        color: white; border-radius: 10px; font-weight: 600; border: none;
-    }
+    body { background-color: #F9FAF9; color: #2C3E50; }
+    .main-title { font-size: 2.4em; font-weight: 800; color: #2C3E50; text-align: center; margin-bottom: 0.2em; }
+    .subtitle { font-size: 1.05em; text-align: center; color: #5f6b7a; margin-bottom: 1.4em; }
+    .stButton button { background: linear-gradient(90deg, #5DC2A2, #FFD77A); color: white; border-radius: 10px; font-weight: 600; border: none; }
+    .stDownloadButton button { background: linear-gradient(90deg, #FFD77A, #5DC2A2); color: white; border-radius: 10px; font-weight: 700; border: none; }
     </style>
 """, unsafe_allow_html=True)
 
-# ----------------------- i18n -----------------------
 LANG = st.session_state.get("LANG", "EN")
 labels = {
-    "EN": {
-        "title": "🥗 Meal Plan Generator",
-        "caption": "Generate a shareable multi-day meal plan with calories & macros.",
-        "sidebar_prefs": "Preferences",
-        "days": "Days",
-        "kcal": "Daily calories (base)",
-        "meals": "Meals per day",
-        "diet": "Diet",
-        "protein": "Protein %",
-        "carbs": "Carbs %",
-        "fat": "Fat %",
-        "max_items": "Max items per meal",
-        "allergens": "Exclude allergens (tags)",
-        "groups": "Exclude food groups",
-        "dislikes": "Dislikes (comma-separated names)",
-        "lang": "Language",
-        "profile": "Profile",
-        "custom": "Custom",
-        "cut": "Cut (-15% kcal, higher protein)",
-        "maintain": "Maintain (balanced)",
-        "bulk": "Bulk (+15% kcal, higher carbs)",
-        "plan_header": "Plan — {days} days at {kcal} kcal/day (effective: {eff_kcal})",
-        "download": "⬇️ Download as HTML",
-        "tip": "Tip: Send the downloaded HTML via WhatsApp/Email, or host it on Netlify/GitHub Pages to share as a link.",
-        "macros_error": "Protein % + Carbs % must be ≤ 100.",
-        "about_header": "About this app",
-        "about_lines": """🏋️‍♀️ Flexible meal plans with macro targets  
-🌱 Diets: omnivore, vegetarian, vegan, gluten-free  
-🧮 Profiles: Cut / Maintain / Bulk  
-💡 Created by <b>Jelena Vučetić</b>""",
-        "day": "Day",
-        "meal": "Meal",
-    },
-    "SR": {
-        "title": "🥗 Generator jelovnika",
-        "caption": "Napravi višednevni plan ishrane sa kalorijama i makroima — spreman za deljenje.",
-        "sidebar_prefs": "Podešavanja",
-        "days": "Broj dana",
-        "kcal": "Dnevne kalorije (osnovna vrednost)",
-        "meals": "Obroka dnevno",
-        "diet": "Dijeta",
-        "protein": "Proteini %",
-        "carbs": "Ugljeni hidrati %",
-        "fat": "Masti %",
-        "max_items": "Maks. namirnica po obroku",
-        "allergens": "Isključi alergene (tagovi)",
-        "groups": "Isključi grupe namirnica",
-        "dislikes": "Ne volim (imena odvojena zarezom)",
-        "lang": "Jezik",
-        "profile": "Profil",
-        "custom": "Prilagođeno",
-        "cut": "Deficit (-15% kcal, više proteina)",
-        "maintain": "Održavanje (izbalansirano)",
-        "bulk": "Suficit (+15% kcal, više UH)",
-        "plan_header": "Plan — {days} dana @ {kcal} kcal/dan (efektivno: {eff_kcal})",
-        "download": "⬇️ Preuzmi kao HTML",
-        "tip": "Savjet: Pošalji HTML preko WhatsApp/E-mail ili hostuj na Netlify/GitHub Pages kao link.",
-        "macros_error": "Zbir Proteini% + UH% mora biti ≤ 100.",
-        "about_header": "O aplikaciji",
-        "about_lines": """🏋️‍♀️ Fleksibilni jelovnici sa makro ciljevima  
-🌱 Dijete: omnivore, vegetarijanska, veganska, bez glutena  
-🧮 Profili: Deficit / Održavanje / Suficit  
-💡 Autor: <b>Jelena Vučetić</b>""",
-        "day": "Dan",
-        "meal": "Obrok",
-    },
+    "EN": {"title":"🥗 Meal Plan Generator","caption":"Generate a shareable multi-day meal plan with calories & macros.","sidebar_prefs":"Preferences","days":"Days","kcal":"Daily calories (base)","meals":"Meals per day","diet":"Diet","protein":"Protein %","carbs":"Carbs %","fat":"Fat %","max_items":"Max items per meal","allergens":"Exclude allergens (tags)","groups":"Exclude food groups","dislikes":"Dislikes (comma-separated names)","lang":"Language","profile":"Profile","custom":"Custom","cut":"Cut (-15% kcal, higher protein)","maintain":"Maintain (balanced)","bulk":"Bulk (+15% kcal, higher carbs)","plan_header":"Plan — {days} days at {kcal} kcal/day (effective: {eff_kcal})","download":"⬇️ Download as HTML","tip":"Tip: Send the downloaded HTML via WhatsApp/Email, or host it on Netlify/GitHub Pages to share as a link.","macros_error":"Protein % + Carbs % must be ≤ 100.","about_header":"About this app","about_lines":"🏋️‍♀️ Flexible meal plans with macro targets  \n🌱 Diets: omnivore, vegetarian, vegan, gluten-free  \n🧮 Profiles: Cut / Maintain / Bulk  \n💡 Created by <b>Jelena Vučetić</b>","day":"Day","meal":"Meal"},
+    "SR": {"title":"🥗 Generator jelovnika","caption":"Napravi višednevni plan ishrane sa kalorijama i makroima — spreman za deljenje.","sidebar_prefs":"Podešavanja","days":"Broj dana","kcal":"Dnevne kalorije (osnovna vrednost)","meals":"Obroka dnevno","diet":"Dijeta","protein":"Proteini %","carbs":"Ugljeni hidrati %","fat":"Masti %","max_items":"Maks. namirnica po obroku","allergens":"Isključi alergene (tagovi)","groups":"Isključi grupe namirnica","dislikes":"Ne volim (imena odvojena zarezom)","lang":"Jezik","profile":"Profil","custom":"Prilagođeno","cut":"Deficit (-15% kcal, više proteina)","maintain":"Održavanje (izbalansirano)","bulk":"Suficit (+15% kcal, više UH)","plan_header":"Plan — {days} dana @ {kcal} kcal/dan (efektivno: {eff_kcal})","download":"⬇️ Preuzmi kao HTML","tip":"Savjet: Pošalji HTML preko WhatsApp/E-mail ili hostuj na Netlify/GitHub Pages kao link.","macros_error":"Zbir Proteini% + UH% mora biti ≤ 100.","about_header":"O aplikaciji","about_lines":"🏋️‍♀️ Fleksibilni jelovnici sa makro ciljevima  \n🌱 Dijete: omnivore, vegetarijanska, veganska, bez glutena  \n🧮 Profili: Deficit / Održavanje / Suficit  \n💡 Autor: <b>Jelena Vučetić</b>","day":"Dan","meal":"Obrok"}
 }
+def L(key): return labels[st.session_state.get("LANG","EN")][key]
 
-def L(key):
-    return labels[st.session_state.get("LANG","EN")][key]
-
-# ----------------------- Core logic -----------------------
 def load_foods(path):
     with open(path, "r") as f:
         return json.load(f)
@@ -218,8 +139,6 @@ def generate_plan(foods, days, prefs):
     macros["kcal_meal"] = prefs["effective_kcal"]/prefs["meals"]
     macros["meals"] = prefs["meals"]
     pool = filter_by_diet(foods, prefs["diet"])
-
-    # Apply allergens/groups/dislikes filters
     if prefs["exclude_tags"]:
         pool = [f for f in pool if not any(tag in f.get("tags", []) for tag in prefs["exclude_tags"])]
     if prefs["exclude_groups"]:
@@ -231,14 +150,12 @@ def generate_plan(foods, days, prefs):
     if len(pool) < 5:
         st.warning("Filters are too strict; re-adding all foods temporarily.")
         pool = filter_by_diet(foods, prefs["diet"])
-
     plan = []
     for _ in range(days):
         day = build_day(pool, macros, meals=prefs["meals"], max_items_per_meal=prefs["max_items"])
         plan.append(day)
     return plan, macros
 
-# ----------------------- Header -----------------------
 if "LANG" not in st.session_state:
     st.session_state["LANG"] = "EN"
 
@@ -247,17 +164,13 @@ with col_lang:
     lang_choice = st.selectbox("Language / Jezik", ["EN","SR"], index=0 if st.session_state["LANG"]=="EN" else 1)
 st.session_state["LANG"] = lang_choice
 
-st.markdown(
-    """
-    <div class="main-title">🥗 Meal Plan Generator</div>
-    <div class="subtitle">Personalized nutrition plans by <b>Jelena Vučetić</b></div>
-    """,
-    unsafe_allow_html=True
-)
-
+c1, c2, c3 = st.columns([1,3,1])
+with c2:
+    st.image("logo.png", width=72)
+    st.markdown("""<div class="main-title">Meal Plan Generator</div>
+    <div class="subtitle">Personalized nutrition plans by <b>Jelena Vučetić</b></div>""", unsafe_allow_html=True)
 st.caption(L("caption"))
 
-# ----------------------- Sidebar -----------------------
 with st.sidebar:
     st.header(L("sidebar_prefs"))
     days = st.slider(L("days"), 1, 14, 7)
@@ -269,26 +182,19 @@ with st.sidebar:
     protein_pct, carbs_pct, fat_pct = 0.30, 0.40, 0.30
     effective_kcal = base_kcal
     if profile == L("cut"):
-        effective_kcal = int(base_kcal * 0.85)
-        protein_pct, carbs_pct, fat_pct = 0.35, 0.35, 0.30
+        effective_kcal = int(base_kcal * 0.85); protein_pct, carbs_pct, fat_pct = 0.35, 0.35, 0.30
     elif profile == L("maintain"):
-        effective_kcal = base_kcal
-        protein_pct, carbs_pct, fat_pct = 0.30, 0.40, 0.30
+        effective_kcal = base_kcal; protein_pct, carbs_pct, fat_pct = 0.30, 0.40, 0.30
     elif profile == L("bulk"):
-        effective_kcal = int(base_kcal * 1.15)
-        protein_pct, carbs_pct, fat_pct = 0.25, 0.50, 0.25
+        effective_kcal = int(base_kcal * 1.15); protein_pct, carbs_pct, fat_pct = 0.25, 0.50, 0.25
     else:
         protein_pct = st.slider(L("protein"), 10, 50, 30) / 100.0
         carbs_pct = st.slider(L("carbs"), 20, 60, 40) / 100.0
         if protein_pct + carbs_pct > 1.0:
-            st.error(L("macros_error"))
-            st.stop()
-        fat_pct = 1.0 - protein_pct - carbs_pct
-        st.write(f"{L('fat')}: **{int(fat_pct*100)}**")
-
+            st.error(L("macros_error")); st.stop()
+        fat_pct = 1.0 - protein_pct - carbs_pct; st.write(f"{L('fat')}: **{int(fat_pct*100)}**")
     max_items = st.slider(L("max_items"), 2, 5, 3)
 
-    # Allergens & dislikes
     foods = load_foods(os.path.join("data", "foods.json"))
     all_tags = sorted({t for f in foods for t in f.get("tags", [])})
     all_groups = sorted({f["group"] for f in foods})
@@ -296,31 +202,16 @@ with st.sidebar:
     exclude_groups = st.multiselect(L("groups"), all_groups, default=[])
     dislikes = st.text_input(L("dislikes"), value="eggs" if lang_choice=="EN" else "jaja")
 
-    st.markdown("---")
-    st.markdown(f"**{L('about_header')}**")
+    st.markdown("---"); st.markdown(f"**{L('about_header')}**")
     st.markdown(labels[lang_choice]["about_lines"], unsafe_allow_html=True)
     st.markdown("[🌐 GitHub](https://github.com/vucko23)")
 
-prefs = {
-    "kcal": base_kcal,
-    "effective_kcal": effective_kcal,
-    "meals": meals,
-    "protein_pct": protein_pct,
-    "carbs_pct": carbs_pct,
-    "fat_pct": fat_pct,
-    "diet": diet,
-    "max_items": max_items,
-    "exclude_tags": exclude_tags,
-    "exclude_groups": exclude_groups,
-    "dislikes": dislikes,
-    "profile": profile,
-}
+prefs = {"kcal": base_kcal, "effective_kcal": effective_kcal, "meals": meals, "protein_pct": protein_pct, "carbs_pct": carbs_pct, "fat_pct": fat_pct, "diet": diet, "max_items": max_items, "exclude_tags": exclude_tags, "exclude_groups": exclude_groups, "dislikes": dislikes, "profile": profile}
 plan, macros = generate_plan(foods, days, prefs)
 
-# ----------------------- Plan render -----------------------
 st.subheader(L("plan_header").format(days=days, kcal=base_kcal, eff_kcal=effective_kcal))
 for d_idx, day in enumerate(plan, start=1):
-    with st.expander((f"{labels[lang_choice]['day']} {d_idx}")):
+    with st.expander(f"{labels[lang_choice]['day']} {d_idx}"):
         for m_idx, meal in enumerate(day, start=1):
             kcal_m = int(sum(i["kcal"] for i in meal))
             p = int(sum(i["protein"] for i in meal))
@@ -332,8 +223,6 @@ for d_idx, day in enumerate(plan, start=1):
                 st.markdown(f"**{labels[lang_choice]['meal']} {m_idx}** — {kcal_m} kcal • P {p}g • UH {c}g • M {f}g")
             st.write(", ".join([f"{it['name']} (~{it['portion_g']} g)" for it in meal]))
 
-
-# ----------------------- Download HTML -----------------------
 title = f"Meal Plan — {days} days — {int(effective_kcal)} kcal/day"
 html = to_html(plan, macros, title, prefs)
 st.download_button(L("download"), data=html.encode("utf-8"), file_name="meal_plan.html", mime="text/html")
