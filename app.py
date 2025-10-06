@@ -7,57 +7,28 @@ st.set_page_config(
     layout="wide"
 )
 
-# --- Brand styling (CSS + HTML block) ---
-st.markdown("""
-<style>
-.main-title {
-    font-size: 2.4em;
-    font-weight: 800;
-    color: #e5e7eb;
-    margin: 0;
-}
-.subtitle {
-    font-size: 1.05em;
-    color: #9ca3af;
-}
-.brand-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    margin: 6px 0 14px 0;
-}
-.logo-img {
-    width: 64px;
-    height: 64px;
-}
-</style>
-""", unsafe_allow_html=True)
+# --- JV Fit header (jednom!) ---
+outer_left, outer_center, outer_right = st.columns([1, 3, 1])
+with outer_center:
+    left, right = st.columns([1, 6])
+    with left:
+        st.image("logo_favicon.png", width=64)
+    with right:
+        st.markdown(
+            """
+            <div style="margin-top:4px">
+              <div style="font-size:2.4em; font-weight:800; color:#e5e7eb; margin:0;">
+                Meal Plan Generator
+              </div>
+              <div style="font-size:1.05em; color:#9ca3af;">
+                Personalized nutrition plans by <b>Jelena Vučetić</b>
+              </div>
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 
-brand_block = """
-<div class="brand-row">
-  <img class="logo-img" src="logo_favicon.png" alt="JV Fit logo"/>
-  <div>
-    <div class="main-title">Meal Plan Generator</div>
-    <div class="subtitle">Personalized nutrition plans by <b>Jelena Vučetić</b></div>
-  </div>
-</div>
-"""
-
-st.markdown(brand_block, unsafe_allow_html=True)
-
-
-st.markdown("""
-<style>
-.main-title { font-size: 2.4em; font-weight: 800; color: #e5e7eb; margin: 0; }
-.subtitle { font-size: 1.05em; color: #9ca3af; }
-.brand-row { display:flex; align-items:center; justify-content:center; gap:14px; margin: 6px 0 14px 0; }
-.logo-img { width: 64px; height: 64px; }
-</style>
-""", unsafe_allow_html=True)
-
-st.markdown(brand_block, unsafe_allow_html=True)
-
+st.caption(L("caption"))
 
 LANG = st.session_state.get("LANG", "EN")
 labels = {
