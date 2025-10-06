@@ -330,7 +330,8 @@ for d_idx, day in enumerate(plan, start=1):
                 st.markdown(f"**{labels[lang_choice]['meal']} {m_idx}** — {kcal_m} kcal • P {p}g • C {c}g • F {f}g")
             else:
                 st.markdown(f"**{labels[lang_choice]['meal']} {m_idx}** — {kcal_m} kcal • P {p}g • UH {c}g • M {f}g")
-            st.write(", ".join([f\"{it['name']} (~{it['portion_g']} g)\" for it in meal]))
+            st.write(", ".join([f"{it['name']} (~{it['portion_g']} g)" for it in meal]))
+
 
 # ----------------------- Download HTML -----------------------
 title = f"Meal Plan — {days} days — {int(effective_kcal)} kcal/day"
