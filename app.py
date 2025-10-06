@@ -2,6 +2,32 @@
 import streamlit as st
 import json, random, math, datetime, os
 
+# ----------------------- Page + Styling -----------------------
+st.set_page_config(
+    page_title="Meal Plan Generator",
+    page_icon="🥗",
+    layout="wide"
+)
+
+st.markdown("""
+    <style>
+    body {
+        background-color: #f8fafc;
+        color: #2f3640;
+    }
+    .main-title { font-size: 2.3em; font-weight: 700; color: #2c3e50; text-align: center; margin-bottom: 0.3em; }
+    .subtitle { font-size: 1.05em; text-align: center; color: #7f8c8d; margin-bottom: 1.5em; }
+    .stButton button {
+        background: linear-gradient(90deg, #6dd5ed, #2193b0);
+        color: white; border-radius: 10px; font-weight: 600; border: none;
+    }
+    .stDownloadButton button {
+        background: linear-gradient(90deg, #f7971e, #ffd200);
+        color: white; border-radius: 10px; font-weight: 600; border: none;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 # ----------------------- i18n -----------------------
 LANG = st.session_state.get("LANG", "EN")
 labels = {
@@ -30,6 +56,13 @@ labels = {
         "download": "⬇️ Download as HTML",
         "tip": "Tip: Send the downloaded HTML via WhatsApp/Email, or host it on Netlify/GitHub Pages to share as a link.",
         "macros_error": "Protein % + Carbs % must be ≤ 100.",
+        "about_header": "About this app",
+        "about_lines": """🏋️‍♀️ Flexible meal plans with macro targets  
+🌱 Diets: omnivore, vegetarian, vegan, gluten-free  
+🧮 Profiles: Cut / Maintain / Bulk  
+💡 Created by <b>Jelena Vučetić</b>""",
+        "day": "Day",
+        "meal": "Meal",
     },
     "SR": {
         "title": "🥗 Generator jelovnika",
@@ -56,6 +89,13 @@ labels = {
         "download": "⬇️ Preuzmi kao HTML",
         "tip": "Savjet: Pošalji HTML preko WhatsApp/E-mail ili hostuj na Netlify/GitHub Pages kao link.",
         "macros_error": "Zbir Proteini% + UH% mora biti ≤ 100.",
+        "about_header": "O aplikaciji",
+        "about_lines": """🏋️‍♀️ Fleksibilni jelovnici sa makro ciljevima  
+🌱 Dijete: omnivore, vegetarijanska, veganska, bez glutena  
+🧮 Profili: Deficit / Održavanje / Suficit  
+💡 Autor: <b>Jelena Vučetić</b>""",
+        "day": "Dan",
+        "meal": "Obrok",
     },
 }
 
@@ -103,7 +143,6 @@ def build_day(foods, targets, meals=4, max_items_per_meal=3):
             candidates = [f for f in foods if f["name"] not in used or random.random() < 0.4]
             k = min(max_items_per_meal, max(2, int(random.gauss(2.5,0.6))))
             if len(candidates) < k:
-                # if too filtered, fallback to any foods
                 candidates = foods
             meal_items = random.sample(candidates, k=k)
             if random.random() < 0.35 and len(candidates) > 0:
@@ -199,7 +238,7 @@ def generate_plan(foods, days, prefs):
         plan.append(day)
     return plan, macros
 
-# ----------------------- UI -----------------------
+# ----------------------- Header -----------------------
 if "LANG" not in st.session_state:
     st.session_state["LANG"] = "EN"
 
@@ -208,9 +247,17 @@ with col_lang:
     lang_choice = st.selectbox("Language / Jezik", ["EN","SR"], index=0 if st.session_state["LANG"]=="EN" else 1)
 st.session_state["LANG"] = lang_choice
 
-st.title(L("title"))
+st.markdown(
+    """
+    <div class="main-title">🥗 Meal Plan Generator</div>
+    <div class="subtitle">Personalized nutrition plans by <b>Jelena Vučetić</b></div>
+    """,
+    unsafe_allow_html=True
+)
+
 st.caption(L("caption"))
 
+# ----------------------- Sidebar -----------------------
 with st.sidebar:
     st.header(L("sidebar_prefs"))
     days = st.slider(L("days"), 1, 14, 7)
@@ -219,7 +266,6 @@ with st.sidebar:
     diet = st.selectbox(L("diet"), ["omnivore","vegetarian","vegan","gluten-free"])
 
     profile = st.selectbox(L("profile"), [L("custom"), L("cut"), L("maintain"), L("bulk")], index=1)
-    # Defaults
     protein_pct, carbs_pct, fat_pct = 0.30, 0.40, 0.30
     effective_kcal = base_kcal
     if profile == L("cut"):
@@ -250,6 +296,11 @@ with st.sidebar:
     exclude_groups = st.multiselect(L("groups"), all_groups, default=[])
     dislikes = st.text_input(L("dislikes"), value="eggs" if lang_choice=="EN" else "jaja")
 
+    st.markdown("---")
+    st.markdown(f"**{L('about_header')}**")
+    st.markdown(labels[lang_choice]["about_lines"], unsafe_allow_html=True)
+    st.markdown("[🌐 GitHub](https://github.com/vucko23)")
+
 prefs = {
     "kcal": base_kcal,
     "effective_kcal": effective_kcal,
@@ -266,22 +317,23 @@ prefs = {
 }
 plan, macros = generate_plan(foods, days, prefs)
 
-# Render plan
+# ----------------------- Plan render -----------------------
 st.subheader(L("plan_header").format(days=days, kcal=base_kcal, eff_kcal=effective_kcal))
 for d_idx, day in enumerate(plan, start=1):
-    with st.expander(f"Day {d_idx}" if lang_choice=="EN" else f"Dan {d_idx}"):
+    with st.expander((f"{labels[lang_choice]['day']} {d_idx}")):
         for m_idx, meal in enumerate(day, start=1):
             kcal_m = int(sum(i["kcal"] for i in meal))
             p = int(sum(i["protein"] for i in meal))
             c = int(sum(i["carbs"] for i in meal))
             f = int(sum(i["fat"] for i in meal))
-            st.markdown((f"**Meal {m_idx}** — {kcal_m} kcal • P {p}g • C {c}g • F {f}g") if lang_choice=="EN"
-                        else (f"**Obrok {m_idx}** — {kcal_m} kcal • P {p}g • UH {c}g • M {f}g"))
-            st.write(", ".join([f"{it['name']} (~{it['portion_g']} g)" for it in meal]))
+            if lang_choice == "EN":
+                st.markdown(f"**{labels[lang_choice]['meal']} {m_idx}** — {kcal_m} kcal • P {p}g • C {c}g • F {f}g")
+            else:
+                st.markdown(f"**{labels[lang_choice]['meal']} {m_idx}** — {kcal_m} kcal • P {p}g • UH {c}g • M {f}g")
+            st.write(", ".join([f\"{it['name']} (~{it['portion_g']} g)\" for it in meal]))
 
-# Download HTML
+# ----------------------- Download HTML -----------------------
 title = f"Meal Plan — {days} days — {int(effective_kcal)} kcal/day"
 html = to_html(plan, macros, title, prefs)
 st.download_button(L("download"), data=html.encode("utf-8"), file_name="meal_plan.html", mime="text/html")
-
 st.info(L("tip"))
