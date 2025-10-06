@@ -1,4 +1,3 @@
-# J
 
 # 🥗 JV Fit — Meal Plan Generator
 
