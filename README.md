@@ -1,54 +1,59 @@
+# 🥗 Meal Plan Generator
 
-# 🥗 JV Fit — Meal Plan Generator
+[![Python](https://img.shields.io/badge/Python-3.10%20–%203.13-blue)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.x-FF4B4B.svg)](https://streamlit.io/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Made by](https://img.shields.io/badge/Made%20by-Jelena%20Vu%C4%8Deti%C4%87-%23A855F7)](#)
 
-Personalized nutrition plans by **Jelena Vučetić**.
-Generate shareable multi-day meal plans with calorie and macro targets.
-
-[![Deployed on Streamlit Cloud](https://img.shields.io/badge/Deployed%20on-Streamlit%20Cloud-FF4B4B?logo=streamlit&logoColor=white)](https://meal-plan-generator23.streamlit.app)
-[![Python](https://img.shields.io/badge/Python-3.13-blue?logo=python&logoColor=white)](https://www.python.org/)
+A modern, dark-themed **Streamlit app** for generating personalized meal plans with calories and macros — built by **Jelena Vučetić**.
 
 ---
 
 ## ✨ Features
 
-- 🇬🇧 / 🇷🇸 Language switch (EN / SR)
-- Profiles: **Cut / Maintain / Bulk** (auto-adjust kcal and macros)
-- Allergens & dislikes filtering (by tags, groups, or ingredient names)
-- 1–14 day plans · 2–6 meals/day
-- Single-file **HTML export** (easy to share)
+- 📅 Generate **multi-day meal plans**
+- 🍽 Control **quantities per meal** (`+` / `−`)
+- 🔁 **Regenerate meals/days** individually
+- 🔒 **Lock** meals you want to keep
+- 🧠 **Smart macro summary** with tips (EN/SR)
+- 📊 **Daily & overall macro summaries** with optional donut chart
+- 🧾 Export to **HTML / PDF / CSV**
+- 🌿 Quick filters: *No dairy*, *No pork*, *Vegetarian*
+- 🧮 Analytics & daily kcal trend chart
+- 🛒 Automatic **shopping list generator**
 
 ---
 
-## 🧠 Tech Stack
+## 🖼 Preview
 
-**Python** · **Streamlit** · **JSON** · **HTML Export**
+### 🏠 Main view
+
+![Home](assets/mealplan_home.png)
+
+### 🍽 Daily view
+
+![Daily view](assets/day_view.png)
+
+### 📈 Analytics tab
+
+![Analytics](assets/analytics_tab.png)
+
+### 🛒 Shopping list
+
+![Shopping list](assets/shooping_list.png)
 
 ---
 
-## 🚀 Live Demo
-
-🎯 [Open the app on Streamlit Cloud](https://meal-plan-generator23.streamlit.app)
-
-**https://meal-plan-generator23.streamlit.app**
-
----
-
-## 🖼️ Preview
-
-![JV Fit App Preview](images/app_preview.png)
-
----
-
-## 🛠️ Run Locally
+## 🚀 Run locally
 
 ```bash
-# 1️⃣ Clone the repository
+# 1️⃣ Clone the repo
 git clone https://github.com/vucko23/meal-plan-mini-app.git
-cd meal-plan-mini-app
+cd meal-plan-generator
 
-# 2️⃣ Create and activate virtual environment
+# 2️⃣ Create & activate venv
 python3 -m venv .venv
-source .venv/bin/activate   # Windows: .venv\Scripts\activate
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
 
 # 3️⃣ Install dependencies
 pip install -r requirements.txt
@@ -57,23 +62,52 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
+The app will open automatically at
+👉 **http://localhost:8501**
 
-## 📤 Deploy to Streamlit Cloud
+---
 
-1. Push this folder to** ****GitHub**
-2. Go to** **[https://share.streamlit.io](https://share.streamlit.io/)
-3. Click** ****New app → Select your repo → app.py**
-4. Streamlit builds automatically and provides your live public URL
+## 🧩 Project structure
 
-## 🔗 Custom Subdomain
+```
+meal-plan-generator/
+├── app.py
+├── requirements.txt
+├── .gitignore
+├── LICENSE
+├── assets/
+│   ├── mealplan_home.png
+│   ├── day_view.png
+│   ├── analytics_tab.png
+│   └── shooping_list.png
+└── data/
+    └── profiles.json
+```
 
-On Streamlit Cloud:
-**Manage app → Settings → Advanced → Custom subdomain**
+---
 
-## 👩‍💻 Author
+## 🧠 Tech stack
 
-**Jelena Vučetić**
-🏀 Former pro athlete · 🎓 Junior Python & AI Developer
-📍 Based in Montenegro
+- **Streamlit** – UI framework
+- **Pandas** – table operations, CSV export
+- **Matplotlib** – charts and macro summaries
+- **Python 3.10–3.13**
 
-* [🌐 GitHub](https://github.com/vucko23)
+---
+
+## 🗣 Languages
+
+Interface available in:
+
+- 🇬🇧 English
+- 🇷🇸 Serbian
+
+---
+
+## 📝 License
+
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+
+---
+
+Made with ❤️ by **Jelena Vučetić**

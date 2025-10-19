@@ -1,0 +1,79 @@
+# =====================
+# 🐍 PYTHON BASICS
+# =====================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+*.log
+*.sqlite3
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+.venv*/
+*.env
+.env
+
+# =====================
+# 💻 OS & EDITORS
+# =====================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# =====================
+# 📊 DATA / OUTPUTS
+# =====================
+# Exports and generated files
+*.csv
+*.xlsx
+*.ods
+*.xml
+*.html
+*.json
+*.zip
+
+# Local caches or analysis outputs
+outputs/
+cache/
+__outputs__/
+temp/
+tmp/
+data/*.csv
+data/*.xlsx
+
+# Keep this one tracked if you want presets saved
+# (Uncomment the next line if you don't want to track it)
+# data/profiles.json
+
+# =====================
+# 🧰 STREAMLIT
+# =====================
+.streamlit/secrets.toml
+.streamlit/config.toml
+
+# =====================
+# 🧪 NOTEBOOKS
+# =====================
+.ipynb_checkpoints/
+*.ipynb
+
+# =====================
+# 📦 BUILD / DIST
+# =====================
+build/
+dist/
+*.spec
+
+# =====================
+# 📸 ASSETS (Optional)
+# =====================
+# You can keep assets/ to store screenshots for README
+# assets/

@@ -1,344 +1,1879 @@
 [
   {
-    "name": "Oats",
-    "group": "grains",
-    "portion_g": 50,
-    "kcal": 190,
-    "protein": 6.6,
-    "carbs": 32.8,
-    "fat": 3.4,
+    "name": "Greek yogurt 2%",
+    "group": "dairy",
+    "macros": {
+      "kcal": 73,
+      "p": 10.0,
+      "c": 4.0,
+      "f": 2.0
+    },
+    "portion": 170,
+    "unit": "g",
     "tags": [
+      "high_protein",
       "vegetarian",
-      "vegan",
-      "gluten"
+      "quick"
+    ],
+    "slots": [
+      "breakfast",
+      "snack"
     ]
   },
   {
-    "name": "Greek Yogurt 2%",
-    "group": "dairy",
-    "portion_g": 170,
-    "kcal": 120,
-    "protein": 17,
-    "carbs": 6,
-    "fat": 3,
+    "name": "Oats (rolled)",
+    "group": "grains",
+    "macros": {
+      "kcal": 389,
+      "p": 16.9,
+      "c": 66.3,
+      "f": 6.9
+    },
+    "portion": 50,
+    "unit": "g",
     "tags": [
-      "vegetarian"
+      "fiber",
+      "vegan"
+    ],
+    "slots": [
+      "breakfast"
     ]
   },
   {
     "name": "Banana",
     "group": "fruit",
-    "portion_g": 120,
-    "kcal": 105,
-    "protein": 1.3,
-    "carbs": 27,
-    "fat": 0.4,
+    "macros": {
+      "kcal": 89,
+      "p": 1.1,
+      "c": 22.8,
+      "f": 0.3
+    },
+    "portion": 120,
+    "unit": "g",
+    "tags": [
+      "vegan"
+    ],
+    "slots": [
+      "breakfast",
+      "snack"
+    ]
+  },
+  {
+    "name": "Eggs (whole)",
+    "group": "eggs",
+    "macros": {
+      "kcal": 143,
+      "p": 12.6,
+      "c": 1.1,
+      "f": 9.5
+    },
+    "portion": 100,
+    "unit": "g",
+    "tags": [
+      "keto",
+      "high_protein"
+    ],
+    "slots": [
+      "breakfast"
+    ]
+  },
+  {
+    "name": "Whole-wheat bread",
+    "group": "grains",
+    "macros": {
+      "kcal": 252,
+      "p": 12.5,
+      "c": 43.3,
+      "f": 4.2
+    },
+    "portion": 60,
+    "unit": "g",
+    "tags": [
+      "fiber"
+    ],
+    "slots": [
+      "breakfast",
+      "snack"
+    ]
+  },
+  {
+    "name": "Peanut butter",
+    "group": "nuts",
+    "macros": {
+      "kcal": 588,
+      "p": 25.0,
+      "c": 20.0,
+      "f": 50.0
+    },
+    "portion": 32,
+    "unit": "g",
     "tags": [
       "vegetarian",
-      "vegan",
-      "gluten-free"
+      "energy_dense"
+    ],
+    "slots": [
+      "breakfast",
+      "snack"
+    ]
+  },
+  {
+    "name": "Cottage cheese 1%",
+    "group": "dairy",
+    "macros": {
+      "kcal": 72,
+      "p": 12.4,
+      "c": 3.4,
+      "f": 1.0
+    },
+    "portion": 150,
+    "unit": "g",
+    "tags": [
+      "high_protein",
+      "vegetarian"
+    ],
+    "slots": [
+      "breakfast",
+      "snack"
     ]
   },
   {
     "name": "Blueberries",
     "group": "fruit",
-    "portion_g": 100,
-    "kcal": 57,
-    "protein": 0.7,
-    "carbs": 14.5,
-    "fat": 0.3,
+    "macros": {
+      "kcal": 57,
+      "p": 0.7,
+      "c": 14.5,
+      "f": 0.3
+    },
+    "portion": 100,
+    "unit": "g",
     "tags": [
-      "vegetarian",
-      "vegan",
-      "gluten-free"
-    ]
-  },
-  {
-    "name": "Eggs (2)",
-    "group": "protein",
-    "portion_g": 100,
-    "kcal": 155,
-    "protein": 13,
-    "carbs": 1.1,
-    "fat": 11,
-    "tags": [
-      "vegetarian"
-    ]
-  },
-  {
-    "name": "Chicken Breast",
-    "group": "protein",
-    "portion_g": 150,
-    "kcal": 248,
-    "protein": 46,
-    "carbs": 0,
-    "fat": 5.3,
-    "tags": []
-  },
-  {
-    "name": "Salmon",
-    "group": "protein",
-    "portion_g": 150,
-    "kcal": 280,
-    "protein": 34,
-    "carbs": 0,
-    "fat": 15,
-    "tags": []
-  },
-  {
-    "name": "Tofu",
-    "group": "protein",
-    "portion_g": 150,
-    "kcal": 120,
-    "protein": 14,
-    "carbs": 3.5,
-    "fat": 6.9,
-    "tags": [
-      "vegetarian",
+      "antioxidants",
       "vegan"
+    ],
+    "slots": [
+      "breakfast",
+      "snack"
     ]
   },
   {
-    "name": "Chickpeas (cooked)",
-    "group": "legumes",
-    "portion_g": 150,
-    "kcal": 240,
-    "protein": 12,
-    "carbs": 36,
-    "fat": 4,
+    "name": "Chicken breast, cooked",
+    "group": "meat",
+    "macros": {
+      "kcal": 165,
+      "p": 31.0,
+      "c": 0.0,
+      "f": 3.6
+    },
+    "portion": 150,
+    "unit": "g",
     "tags": [
-      "vegetarian",
-      "vegan",
-      "gluten-free"
+      "high_protein",
+      "gluten_free"
+    ],
+    "slots": [
+      "lunch",
+      "dinner"
+    ]
+  },
+  {
+    "name": "Basmati rice (cooked)",
+    "group": "grains",
+    "macros": {
+      "kcal": 130,
+      "p": 2.7,
+      "c": 28.2,
+      "f": 0.3
+    },
+    "portion": 180,
+    "unit": "g",
+    "tags": [
+      "gluten_free",
+      "vegan"
+    ],
+    "slots": [
+      "lunch",
+      "dinner"
     ]
   },
   {
     "name": "Quinoa (cooked)",
     "group": "grains",
-    "portion_g": 180,
-    "kcal": 222,
-    "protein": 8,
-    "carbs": 39,
-    "fat": 3.6,
+    "macros": {
+      "kcal": 120,
+      "p": 4.4,
+      "c": 21.3,
+      "f": 1.9
+    },
+    "portion": 185,
+    "unit": "g",
     "tags": [
-      "vegetarian",
-      "vegan",
-      "gluten-free"
-    ]
-  },
-  {
-    "name": "Brown Rice (cooked)",
-    "group": "grains",
-    "portion_g": 180,
-    "kcal": 216,
-    "protein": 5,
-    "carbs": 45,
-    "fat": 1.8,
-    "tags": [
-      "vegetarian",
-      "vegan",
-      "gluten",
-      "gluten-free"
-    ]
-  },
-  {
-    "name": "Wholegrain Bread (2 slices)",
-    "group": "grains",
-    "portion_g": 70,
-    "kcal": 180,
-    "protein": 7,
-    "carbs": 32,
-    "fat": 3,
-    "tags": [
-      "vegetarian"
-    ]
-  },
-  {
-    "name": "Avocado (1/2)",
-    "group": "fat",
-    "portion_g": 70,
-    "kcal": 112,
-    "protein": 1.4,
-    "carbs": 6,
-    "fat": 10.5,
-    "tags": [
-      "vegetarian",
-      "vegan",
-      "gluten-free"
-    ]
-  },
-  {
-    "name": "Olive Oil (1 tbsp)",
-    "group": "fat",
-    "portion_g": 14,
-    "kcal": 119,
-    "protein": 0,
-    "carbs": 0,
-    "fat": 13.5,
-    "tags": [
-      "vegetarian",
-      "vegan",
-      "gluten-free"
-    ]
-  },
-  {
-    "name": "Almonds (handful)",
-    "group": "nuts",
-    "portion_g": 28,
-    "kcal": 164,
-    "protein": 6,
-    "carbs": 6,
-    "fat": 14,
-    "tags": [
-      "vegetarian",
-      "vegan",
-      "gluten-free"
-    ]
-  },
-  {
-    "name": "Spinach",
-    "group": "vegetables",
-    "portion_g": 100,
-    "kcal": 23,
-    "protein": 2.9,
-    "carbs": 3.6,
-    "fat": 0.4,
-    "tags": [
-      "vegetarian",
-      "vegan",
-      "gluten-free"
-    ]
-  },
-  {
-    "name": "Tomato",
-    "group": "vegetables",
-    "portion_g": 120,
-    "kcal": 22,
-    "protein": 1,
-    "carbs": 4.8,
-    "fat": 0.2,
-    "tags": [
-      "vegetarian",
-      "vegan",
-      "gluten-free"
-    ]
-  },
-  {
-    "name": "Cucumber",
-    "group": "vegetables",
-    "portion_g": 100,
-    "kcal": 16,
-    "protein": 0.7,
-    "carbs": 3.6,
-    "fat": 0.1,
-    "tags": [
-      "vegetarian",
-      "vegan",
-      "gluten-free"
-    ]
-  },
-  {
-    "name": "Apple",
-    "group": "fruit",
-    "portion_g": 150,
-    "kcal": 78,
-    "protein": 0.4,
-    "carbs": 21,
-    "fat": 0.2,
-    "tags": [
-      "vegetarian",
-      "vegan",
-      "gluten-free"
-    ]
-  },
-  {
-    "name": "Cottage Cheese (low-fat)",
-    "group": "dairy",
-    "portion_g": 150,
-    "kcal": 140,
-    "protein": 24,
-    "carbs": 6,
-    "fat": 2,
-    "tags": [
-      "vegetarian"
-    ]
-  },
-  {
-    "name": "Lentils (cooked)",
-    "group": "legumes",
-    "portion_g": 150,
-    "kcal": 198,
-    "protein": 15,
-    "carbs": 36,
-    "fat": 0.8,
-    "tags": [
-      "vegetarian",
-      "vegan",
-      "gluten-free"
-    ]
-  },
-  {
-    "name": "Sweet Potato (baked)",
-    "group": "vegetables",
-    "portion_g": 180,
-    "kcal": 162,
-    "protein": 3.6,
-    "carbs": 37,
-    "fat": 0.2,
-    "tags": [
-      "vegetarian",
-      "vegan",
-      "gluten-free"
+      "gluten_free",
+      "vegan"
+    ],
+    "slots": [
+      "lunch",
+      "dinner"
     ]
   },
   {
     "name": "Broccoli (steamed)",
     "group": "vegetables",
-    "portion_g": 150,
-    "kcal": 52,
-    "protein": 4.3,
-    "carbs": 10,
-    "fat": 0.6,
+    "macros": {
+      "kcal": 35,
+      "p": 2.4,
+      "c": 7.2,
+      "f": 0.4
+    },
+    "portion": 100,
+    "unit": "g",
     "tags": [
-      "vegetarian",
-      "vegan",
-      "gluten-free"
+      "fiber",
+      "vegan"
+    ],
+    "slots": [
+      "lunch",
+      "dinner"
     ]
   },
   {
-    "name": "Tortilla Whole Wheat (1)",
-    "group": "grains",
-    "portion_g": 60,
-    "kcal": 140,
-    "protein": 4,
-    "carbs": 24,
-    "fat": 3.5,
+    "name": "Olive oil",
+    "group": "fats",
+    "macros": {
+      "kcal": 884,
+      "p": 0.0,
+      "c": 0.0,
+      "f": 100.0
+    },
+    "portion": 10,
+    "unit": "g",
     "tags": [
-      "vegetarian"
+      "mediterranean"
+    ],
+    "slots": [
+      "lunch",
+      "dinner"
+    ]
+  },
+  {
+    "name": "Salmon, baked",
+    "group": "fish",
+    "macros": {
+      "kcal": 208,
+      "p": 20.4,
+      "c": 0.0,
+      "f": 13.4
+    },
+    "portion": 150,
+    "unit": "g",
+    "tags": [
+      "omega_3",
+      "high_protein"
+    ],
+    "slots": [
+      "lunch",
+      "dinner"
+    ]
+  },
+  {
+    "name": "Tuna in water, drained",
+    "group": "fish",
+    "macros": {
+      "kcal": 116,
+      "p": 26.0,
+      "c": 0.0,
+      "f": 0.8
+    },
+    "portion": 120,
+    "unit": "g",
+    "tags": [
+      "lean"
+    ],
+    "slots": [
+      "lunch",
+      "dinner"
+    ]
+  },
+  {
+    "name": "Mixed salad greens",
+    "group": "vegetables",
+    "macros": {
+      "kcal": 20,
+      "p": 2.0,
+      "c": 3.6,
+      "f": 0.3
+    },
+    "portion": 80,
+    "unit": "g",
+    "tags": [
+      "low_cal",
+      "vegan"
+    ],
+    "slots": [
+      "lunch",
+      "dinner"
+    ]
+  },
+  {
+    "name": "Cherry tomatoes",
+    "group": "vegetables",
+    "macros": {
+      "kcal": 18,
+      "p": 0.9,
+      "c": 3.9,
+      "f": 0.2
+    },
+    "portion": 100,
+    "unit": "g",
+    "tags": [
+      "vegan"
+    ],
+    "slots": [
+      "lunch",
+      "dinner"
+    ]
+  },
+  {
+    "name": "Feta cheese",
+    "group": "dairy",
+    "macros": {
+      "kcal": 265,
+      "p": 14.2,
+      "c": 3.9,
+      "f": 21.3
+    },
+    "portion": 40,
+    "unit": "g",
+    "tags": [
+      "mediterranean"
+    ],
+    "slots": [
+      "lunch",
+      "dinner"
+    ]
+  },
+  {
+    "name": "Tofu (firm)",
+    "group": "plant_protein",
+    "macros": {
+      "kcal": 144,
+      "p": 17.3,
+      "c": 3.0,
+      "f": 8.7
+    },
+    "portion": 150,
+    "unit": "g",
+    "tags": [
+      "vegan",
+      "high_protein"
+    ],
+    "slots": [
+      "lunch",
+      "dinner"
+    ]
+  },
+  {
+    "name": "Lentils (cooked)",
+    "group": "legumes",
+    "macros": {
+      "kcal": 116,
+      "p": 9.0,
+      "c": 20.1,
+      "f": 0.4
+    },
+    "portion": 185,
+    "unit": "g",
+    "tags": [
+      "vegan",
+      "fiber"
+    ],
+    "slots": [
+      "lunch",
+      "dinner"
+    ]
+  },
+  {
+    "name": "Avocado",
+    "group": "fruit",
+    "macros": {
+      "kcal": 160,
+      "p": 2.0,
+      "c": 8.5,
+      "f": 14.7
+    },
+    "portion": 70,
+    "unit": "g",
+    "tags": [
+      "healthy_fats"
+    ],
+    "slots": [
+      "lunch",
+      "dinner",
+      "snack"
+    ]
+  },
+  {
+    "name": "Almonds",
+    "group": "nuts",
+    "macros": {
+      "kcal": 579,
+      "p": 21.2,
+      "c": 21.6,
+      "f": 49.9
+    },
+    "portion": 28,
+    "unit": "g",
+    "tags": [
+      "vegan",
+      "snack"
+    ],
+    "slots": [
+      "snack"
+    ]
+  },
+  {
+    "name": "Apple",
+    "group": "fruit",
+    "macros": {
+      "kcal": 52,
+      "p": 0.3,
+      "c": 13.8,
+      "f": 0.2
+    },
+    "portion": 150,
+    "unit": "g",
+    "tags": [
+      "vegan"
+    ],
+    "slots": [
+      "snack",
+      "breakfast"
+    ]
+  },
+  {
+    "name": "Protein bar (whey)",
+    "group": "processed",
+    "macros": {
+      "kcal": 360,
+      "p": 30.0,
+      "c": 23.0,
+      "f": 14.0
+    },
+    "portion": 60,
+    "unit": "g",
+    "tags": [
+      "convenience",
+      "high_protein"
+    ],
+    "slots": [
+      "snack"
     ]
   },
   {
     "name": "Hummus",
     "group": "legumes",
-    "portion_g": 50,
-    "kcal": 166,
-    "protein": 4.8,
-    "carbs": 14.3,
-    "fat": 10.6,
+    "macros": {
+      "kcal": 242,
+      "p": 7.8,
+      "c": 14.3,
+      "f": 17.8
+    },
+    "portion": 50,
+    "unit": "g",
     "tags": [
-      "vegetarian",
       "vegan",
-      "gluten-free"
+      "mediterranean"
+    ],
+    "slots": [
+      "snack",
+      "lunch"
     ]
   },
   {
-    "name": "Tuna (canned in water)",
-    "group": "protein",
-    "portion_g": 120,
-    "kcal": 144,
-    "protein": 32,
-    "carbs": 0,
-    "fat": 1,
-    "tags": []
+    "name": "Carrot sticks",
+    "group": "vegetables",
+    "macros": {
+      "kcal": 41,
+      "p": 0.9,
+      "c": 9.6,
+      "f": 0.2
+    },
+    "portion": 100,
+    "unit": "g",
+    "tags": [
+      "vegan",
+      "snack"
+    ],
+    "slots": [
+      "snack",
+      "lunch"
+    ]
+  },
+  {
+    "name": "Rice cakes (plain)",
+    "group": "grains",
+    "macros": {
+      "kcal": 387,
+      "p": 7.5,
+      "c": 81.5,
+      "f": 2.9
+    },
+    "portion": 18,
+    "unit": "g",
+    "tags": [
+      "gluten_free"
+    ],
+    "slots": [
+      "snack",
+      "breakfast"
+    ]
+  },
+  {
+    "name": "Dark chocolate 85%",
+    "group": "sweets",
+    "macros": {
+      "kcal": 600,
+      "p": 7.8,
+      "c": 19.0,
+      "f": 52.0
+    },
+    "portion": 20,
+    "unit": "g",
+    "tags": [
+      "treat"
+    ],
+    "slots": [
+      "snack"
+    ]
+  },
+  {
+    "name": "Turkey mince (cooked)",
+    "group": "meat",
+    "macros": {
+      "kcal": 189,
+      "p": 27.0,
+      "c": 0.0,
+      "f": 8.0
+    },
+    "portion": 150,
+    "unit": "g",
+    "tags": [
+      "lean",
+      "high_protein"
+    ],
+    "slots": [
+      "dinner",
+      "lunch"
+    ]
+  },
+  {
+    "name": "Sweet potato (baked)",
+    "group": "vegetables",
+    "macros": {
+      "kcal": 90,
+      "p": 2.0,
+      "c": 21.0,
+      "f": 0.1
+    },
+    "portion": 200,
+    "unit": "g",
+    "tags": [
+      "fiber",
+      "vegan"
+    ],
+    "slots": [
+      "dinner",
+      "lunch"
+    ]
+  },
+  {
+    "name": "Zucchini (grilled)",
+    "group": "vegetables",
+    "macros": {
+      "kcal": 17,
+      "p": 1.2,
+      "c": 3.1,
+      "f": 0.3
+    },
+    "portion": 120,
+    "unit": "g",
+    "tags": [
+      "vegan",
+      "low_cal"
+    ],
+    "slots": [
+      "dinner",
+      "lunch"
+    ]
+  },
+  {
+    "name": "Whole-wheat pasta (cooked)",
+    "group": "grains",
+    "macros": {
+      "kcal": 149,
+      "p": 5.8,
+      "c": 30.9,
+      "f": 0.9
+    },
+    "portion": 180,
+    "unit": "g",
+    "tags": [
+      "fiber"
+    ],
+    "slots": [
+      "dinner",
+      "lunch"
+    ]
+  },
+  {
+    "name": "Marinara sauce",
+    "group": "sauces",
+    "macros": {
+      "kcal": 70,
+      "p": 1.8,
+      "c": 11.0,
+      "f": 2.0
+    },
+    "portion": 125,
+    "unit": "g",
+    "tags": [
+      "vegan"
+    ],
+    "slots": [
+      "dinner",
+      "lunch"
+    ]
+  },
+  {
+    "name": "Parmesan",
+    "group": "dairy",
+    "macros": {
+      "kcal": 431,
+      "p": 38.0,
+      "c": 4.1,
+      "f": 29.0
+    },
+    "portion": 15,
+    "unit": "g",
+    "tags": [
+      "umami"
+    ],
+    "slots": [
+      "dinner",
+      "lunch"
+    ]
+  },
+  {
+    "name": "Shrimp (cooked)",
+    "group": "fish",
+    "macros": {
+      "kcal": 99,
+      "p": 24.0,
+      "c": 0.2,
+      "f": 0.3
+    },
+    "portion": 120,
+    "unit": "g",
+    "tags": [
+      "low_fat",
+      "high_protein"
+    ],
+    "slots": [
+      "dinner",
+      "lunch"
+    ]
+  },
+  {
+    "name": "Brown rice (cooked)",
+    "group": "grains",
+    "macros": {
+      "kcal": 123,
+      "p": 2.7,
+      "c": 25.6,
+      "f": 1.0
+    },
+    "portion": 185,
+    "unit": "g",
+    "tags": [
+      "fiber",
+      "vegan"
+    ],
+    "slots": [
+      "dinner",
+      "lunch"
+    ]
+  },
+  {
+    "name": "Skyr",
+    "group": "dairy",
+    "macros": {
+      "kcal": 63,
+      "p": 11.0,
+      "c": 3.6,
+      "f": 0.2
+    },
+    "portion": 150,
+    "unit": "g",
+    "tags": [
+      "high_protein",
+      "low_fat"
+    ],
+    "slots": [
+      "breakfast",
+      "snack"
+    ]
+  },
+  {
+    "name": "Chickpeas (cooked)",
+    "group": "legumes",
+    "macros": {
+      "kcal": 164,
+      "p": 8.9,
+      "c": 27.4,
+      "f": 2.6
+    },
+    "portion": 160,
+    "unit": "g",
+    "tags": [
+      "vegan",
+      "fiber"
+    ],
+    "slots": [
+      "lunch",
+      "dinner"
+    ]
+  },
+  {
+    "name": "Spinach (raw)",
+    "group": "vegetables",
+    "macros": {
+      "kcal": 23,
+      "p": 2.9,
+      "c": 3.6,
+      "f": 0.4
+    },
+    "portion": 50,
+    "unit": "g",
+    "tags": [
+      "iron",
+      "vegan"
+    ],
+    "slots": [
+      "lunch",
+      "dinner",
+      "breakfast"
+    ]
+  },
+  {
+    "name": "Strawberries",
+    "group": "fruit",
+    "macros": {
+      "kcal": 32,
+      "p": 0.7,
+      "c": 7.7,
+      "f": 0.3
+    },
+    "portion": 100,
+    "unit": "g",
+    "tags": [
+      "vegan"
+    ],
+    "slots": [
+      "breakfast",
+      "snack"
+    ]
+  },
+  {
+    "name": "Pita (whole wheat)",
+    "group": "grains",
+    "macros": {
+      "kcal": 262,
+      "p": 9.8,
+      "c": 55.7,
+      "f": 1.4
+    },
+    "portion": 60,
+    "unit": "g",
+    "tags": [
+      "mediterranean"
+    ],
+    "slots": [
+      "lunch",
+      "dinner"
+    ]
+  },
+  {
+    "name": "Tahini",
+    "group": "fats",
+    "macros": {
+      "kcal": 595,
+      "p": 17.0,
+      "c": 21.0,
+      "f": 53.0
+    },
+    "portion": 20,
+    "unit": "g",
+    "tags": [
+      "vegan",
+      "sesame"
+    ],
+    "slots": [
+      "lunch",
+      "dinner",
+      "snack"
+    ]
+  },
+  {
+    "name": "Cucumber",
+    "group": "vegetables",
+    "macros": {
+      "kcal": 15,
+      "p": 0.7,
+      "c": 3.6,
+      "f": 0.1
+    },
+    "portion": 80,
+    "unit": "g",
+    "tags": [
+      "hydrating",
+      "vegan"
+    ],
+    "slots": [
+      "lunch",
+      "dinner",
+      "snack"
+    ]
+  },
+  {
+    "name": "Edamame (cooked)",
+    "group": "legumes",
+    "macros": {
+      "kcal": 121,
+      "p": 11.9,
+      "c": 8.9,
+      "f": 5.2
+    },
+    "portion": 150,
+    "unit": "g",
+    "tags": [
+      "vegan",
+      "high_protein"
+    ],
+    "slots": [
+      "snack",
+      "lunch",
+      "dinner"
+    ]
+  },
+  {
+    "name": "Mozzarella (light)",
+    "group": "dairy",
+    "macros": {
+      "kcal": 254,
+      "p": 24.0,
+      "c": 3.1,
+      "f": 16.0
+    },
+    "portion": 40,
+    "unit": "g",
+    "tags": [
+      "vegetarian"
+    ],
+    "slots": [
+      "lunch",
+      "dinner"
+    ]
+  },
+  {
+    "name": "Turkey ham",
+    "group": "meat",
+    "macros": {
+      "kcal": 124,
+      "p": 17.0,
+      "c": 2.0,
+      "f": 4.0
+    },
+    "portion": 50,
+    "unit": "g",
+    "tags": [
+      "lean"
+    ],
+    "slots": [
+      "breakfast",
+      "snack"
+    ]
+  },
+  {
+    "name": "Granola (low sugar)",
+    "group": "grains",
+    "macros": {
+      "kcal": 450,
+      "p": 10.0,
+      "c": 64.0,
+      "f": 15.0
+    },
+    "portion": 45,
+    "unit": "g",
+    "tags": [
+      "breakfast"
+    ],
+    "slots": [
+      "breakfast"
+    ]
+  },
+  {
+    "name": "Chia seeds",
+    "group": "seeds",
+    "macros": {
+      "kcal": 486,
+      "p": 16.5,
+      "c": 42.1,
+      "f": 30.7
+    },
+    "portion": 20,
+    "unit": "g",
+    "tags": [
+      "omega_3",
+      "fiber",
+      "vegan"
+    ],
+    "slots": [
+      "breakfast",
+      "snack"
+    ]
+  },
+  {
+    "name": "Almond milk (unsweetened)",
+    "group": "dairy_alt",
+    "macros": {
+      "kcal": 15,
+      "p": 0.6,
+      "c": 0.3,
+      "f": 1.1
+    },
+    "portion": 240,
+    "unit": "ml",
+    "tags": [
+      "vegan",
+      "low_cal"
+    ],
+    "slots": [
+      "breakfast",
+      "snack"
+    ]
+  },
+  {
+    "name": "Protein pancakes",
+    "group": "prepared",
+    "macros": {
+      "kcal": 220,
+      "p": 20.0,
+      "c": 22.0,
+      "f": 6.0
+    },
+    "portion": 100,
+    "unit": "g",
+    "tags": [
+      "high_protein"
+    ],
+    "slots": [
+      "breakfast"
+    ]
+  },
+  {
+    "name": "Honey",
+    "group": "sweets",
+    "macros": {
+      "kcal": 304,
+      "p": 0.3,
+      "c": 82.4,
+      "f": 0.0
+    },
+    "portion": 15,
+    "unit": "g",
+    "tags": [
+      "sweetener"
+    ],
+    "slots": [
+      "breakfast",
+      "snack"
+    ]
+  },
+  {
+    "name": "Boiled egg",
+    "group": "eggs",
+    "macros": {
+      "kcal": 155,
+      "p": 12.6,
+      "c": 1.1,
+      "f": 10.6
+    },
+    "portion": 50,
+    "unit": "g",
+    "tags": [
+      "keto",
+      "high_protein"
+    ],
+    "slots": [
+      "breakfast",
+      "snack"
+    ]
+  },
+  {
+    "name": "Smoked turkey slices",
+    "group": "meat",
+    "macros": {
+      "kcal": 110,
+      "p": 18.0,
+      "c": 2.0,
+      "f": 3.0
+    },
+    "portion": 50,
+    "unit": "g",
+    "tags": [
+      "lean"
+    ],
+    "slots": [
+      "breakfast",
+      "snack"
+    ]
+  },
+  {
+    "name": "Cottage cheese 5%",
+    "group": "dairy",
+    "macros": {
+      "kcal": 98,
+      "p": 11.5,
+      "c": 3.4,
+      "f": 4.3
+    },
+    "portion": 150,
+    "unit": "g",
+    "tags": [
+      "high_protein"
+    ],
+    "slots": [
+      "breakfast",
+      "snack"
+    ]
+  },
+  {
+    "name": "Raspberries",
+    "group": "fruit",
+    "macros": {
+      "kcal": 52,
+      "p": 1.2,
+      "c": 11.9,
+      "f": 0.7
+    },
+    "portion": 100,
+    "unit": "g",
+    "tags": [
+      "antioxidants",
+      "vegan"
+    ],
+    "slots": [
+      "breakfast",
+      "snack"
+    ]
+  },
+  {
+    "name": "Protein shake (whey + milk)",
+    "group": "beverage",
+    "macros": {
+      "kcal": 220,
+      "p": 30.0,
+      "c": 12.0,
+      "f": 5.0
+    },
+    "portion": 350,
+    "unit": "ml",
+    "tags": [
+      "high_protein"
+    ],
+    "slots": [
+      "breakfast",
+      "snack",
+      "post_workout"
+    ]
+  },
+  {
+    "name": "Avocado toast",
+    "group": "prepared",
+    "macros": {
+      "kcal": 250,
+      "p": 6.0,
+      "c": 28.0,
+      "f": 12.0
+    },
+    "portion": 120,
+    "unit": "g",
+    "tags": [
+      "healthy_fats"
+    ],
+    "slots": [
+      "breakfast",
+      "snack"
+    ]
+  },
+  {
+    "name": "Peanut butter toast",
+    "group": "prepared",
+    "macros": {
+      "kcal": 270,
+      "p": 9.0,
+      "c": 28.0,
+      "f": 14.0
+    },
+    "portion": 110,
+    "unit": "g",
+    "tags": [
+      "energy_dense"
+    ],
+    "slots": [
+      "breakfast",
+      "snack"
+    ]
+  },
+  {
+    "name": "Skim milk",
+    "group": "dairy",
+    "macros": {
+      "kcal": 34,
+      "p": 3.4,
+      "c": 5.0,
+      "f": 0.1
+    },
+    "portion": 200,
+    "unit": "ml",
+    "tags": [
+      "low_fat"
+    ],
+    "slots": [
+      "breakfast",
+      "snack"
+    ]
+  },
+  {
+    "name": "Rye bread",
+    "group": "grains",
+    "macros": {
+      "kcal": 259,
+      "p": 8.5,
+      "c": 48.3,
+      "f": 3.3
+    },
+    "portion": 60,
+    "unit": "g",
+    "tags": [
+      "fiber"
+    ],
+    "slots": [
+      "breakfast",
+      "snack"
+    ]
+  },
+  {
+    "name": "Smoothie bowl (berries+yogurt+granola)",
+    "group": "prepared",
+    "macros": {
+      "kcal": 320,
+      "p": 13.0,
+      "c": 47.0,
+      "f": 10.0
+    },
+    "portion": 250,
+    "unit": "g",
+    "tags": [
+      "antioxidants"
+    ],
+    "slots": [
+      "breakfast",
+      "snack"
+    ]
+  },
+  {
+    "name": "Oat smoothie (oats+banana+yogurt)",
+    "group": "beverage",
+    "macros": {
+      "kcal": 280,
+      "p": 11.0,
+      "c": 45.0,
+      "f": 6.0
+    },
+    "portion": 300,
+    "unit": "ml",
+    "tags": [
+      "balanced"
+    ],
+    "slots": [
+      "breakfast",
+      "snack"
+    ]
+  },
+  {
+    "name": "Croissant (butter)",
+    "group": "bakery",
+    "macros": {
+      "kcal": 406,
+      "p": 8.2,
+      "c": 45.0,
+      "f": 21.0
+    },
+    "portion": 60,
+    "unit": "g",
+    "tags": [
+      "treat"
+    ],
+    "slots": [
+      "breakfast",
+      "snack"
+    ]
+  },
+  {
+    "name": "Beef steak (grilled)",
+    "group": "meat",
+    "macros": {
+      "kcal": 250,
+      "p": 26.0,
+      "c": 0.0,
+      "f": 16.0
+    },
+    "portion": 170,
+    "unit": "g",
+    "tags": [
+      "high_protein"
+    ],
+    "slots": [
+      "lunch",
+      "dinner"
+    ]
+  },
+  {
+    "name": "Ground beef 5% (cooked)",
+    "group": "meat",
+    "macros": {
+      "kcal": 155,
+      "p": 26.0,
+      "c": 0.0,
+      "f": 5.0
+    },
+    "portion": 150,
+    "unit": "g",
+    "tags": [
+      "lean"
+    ],
+    "slots": [
+      "lunch",
+      "dinner"
+    ]
+  },
+  {
+    "name": "Chicken Caesar salad (light)",
+    "group": "prepared",
+    "macros": {
+      "kcal": 290,
+      "p": 25.0,
+      "c": 10.0,
+      "f": 16.0
+    },
+    "portion": 300,
+    "unit": "g",
+    "tags": [
+      "light"
+    ],
+    "slots": [
+      "lunch"
+    ]
+  },
+  {
+    "name": "Tuna salad (olive oil)",
+    "group": "prepared",
+    "macros": {
+      "kcal": 280,
+      "p": 24.0,
+      "c": 8.0,
+      "f": 16.0
+    },
+    "portion": 250,
+    "unit": "g",
+    "tags": [
+      "mediterranean"
+    ],
+    "slots": [
+      "lunch"
+    ]
+  },
+  {
+    "name": "Chicken wrap (whole-wheat)",
+    "group": "prepared",
+    "macros": {
+      "kcal": 360,
+      "p": 28.0,
+      "c": 35.0,
+      "f": 12.0
+    },
+    "portion": 220,
+    "unit": "g",
+    "tags": [
+      "high_protein"
+    ],
+    "slots": [
+      "lunch"
+    ]
+  },
+  {
+    "name": "Couscous (cooked)",
+    "group": "grains",
+    "macros": {
+      "kcal": 112,
+      "p": 3.8,
+      "c": 23.2,
+      "f": 0.2
+    },
+    "portion": 180,
+    "unit": "g",
+    "tags": [
+      "quick"
+    ],
+    "slots": [
+      "lunch",
+      "dinner"
+    ]
+  },
+  {
+    "name": "Grilled turkey breast",
+    "group": "meat",
+    "macros": {
+      "kcal": 135,
+      "p": 29.0,
+      "c": 0.0,
+      "f": 1.0
+    },
+    "portion": 150,
+    "unit": "g",
+    "tags": [
+      "lean",
+      "high_protein"
+    ],
+    "slots": [
+      "lunch",
+      "dinner"
+    ]
+  },
+  {
+    "name": "Boiled potatoes",
+    "group": "vegetables",
+    "macros": {
+      "kcal": 87,
+      "p": 1.9,
+      "c": 20.1,
+      "f": 0.1
+    },
+    "portion": 200,
+    "unit": "g",
+    "tags": [
+      "gluten_free"
+    ],
+    "slots": [
+      "lunch",
+      "dinner"
+    ]
+  },
+  {
+    "name": "Sweet corn (cooked)",
+    "group": "vegetables",
+    "macros": {
+      "kcal": 96,
+      "p": 3.4,
+      "c": 21.0,
+      "f": 1.5
+    },
+    "portion": 150,
+    "unit": "g",
+    "tags": [
+      "vegan"
+    ],
+    "slots": [
+      "lunch",
+      "dinner"
+    ]
+  },
+  {
+    "name": "Green beans (steamed)",
+    "group": "vegetables",
+    "macros": {
+      "kcal": 35,
+      "p": 1.9,
+      "c": 7.9,
+      "f": 0.3
+    },
+    "portion": 150,
+    "unit": "g",
+    "tags": [
+      "vegan"
+    ],
+    "slots": [
+      "lunch",
+      "dinner"
+    ]
+  },
+  {
+    "name": "Ratatouille (vegan)",
+    "group": "prepared",
+    "macros": {
+      "kcal": 85,
+      "p": 2.0,
+      "c": 12.0,
+      "f": 3.0
+    },
+    "portion": 250,
+    "unit": "g",
+    "tags": [
+      "vegan"
+    ],
+    "slots": [
+      "lunch",
+      "dinner"
+    ]
+  },
+  {
+    "name": "Greek salad (light)",
+    "group": "prepared",
+    "macros": {
+      "kcal": 210,
+      "p": 8.0,
+      "c": 8.0,
+      "f": 16.0
+    },
+    "portion": 250,
+    "unit": "g",
+    "tags": [
+      "mediterranean"
+    ],
+    "slots": [
+      "lunch",
+      "dinner"
+    ]
+  },
+  {
+    "name": "Tofu stir-fry",
+    "group": "prepared",
+    "macros": {
+      "kcal": 190,
+      "p": 15.0,
+      "c": 12.0,
+      "f": 9.0
+    },
+    "portion": 250,
+    "unit": "g",
+    "tags": [
+      "vegan",
+      "high_protein"
+    ],
+    "slots": [
+      "lunch",
+      "dinner"
+    ]
+  },
+  {
+    "name": "Spaghetti bolognese (lean)",
+    "group": "prepared",
+    "macros": {
+      "kcal": 155,
+      "p": 9.0,
+      "c": 22.0,
+      "f": 4.0
+    },
+    "portion": 300,
+    "unit": "g",
+    "tags": [
+      "balanced"
+    ],
+    "slots": [
+      "lunch",
+      "dinner"
+    ]
+  },
+  {
+    "name": "Red lentil soup",
+    "group": "soup",
+    "macros": {
+      "kcal": 95,
+      "p": 6.0,
+      "c": 14.0,
+      "f": 2.0
+    },
+    "portion": 300,
+    "unit": "g",
+    "tags": [
+      "vegan",
+      "fiber"
+    ],
+    "slots": [
+      "lunch",
+      "dinner"
+    ]
+  },
+  {
+    "name": "Baked cod",
+    "group": "fish",
+    "macros": {
+      "kcal": 105,
+      "p": 23.0,
+      "c": 0.0,
+      "f": 1.0
+    },
+    "portion": 150,
+    "unit": "g",
+    "tags": [
+      "lean",
+      "high_protein"
+    ],
+    "slots": [
+      "dinner",
+      "lunch"
+    ]
+  },
+  {
+    "name": "Grilled chicken thighs",
+    "group": "meat",
+    "macros": {
+      "kcal": 209,
+      "p": 18.0,
+      "c": 0.0,
+      "f": 15.0
+    },
+    "portion": 150,
+    "unit": "g",
+    "tags": [
+      "high_protein"
+    ],
+    "slots": [
+      "dinner",
+      "lunch"
+    ]
+  },
+  {
+    "name": "Salmon with asparagus",
+    "group": "prepared",
+    "macros": {
+      "kcal": 195,
+      "p": 20.0,
+      "c": 3.0,
+      "f": 11.0
+    },
+    "portion": 250,
+    "unit": "g",
+    "tags": [
+      "omega_3"
+    ],
+    "slots": [
+      "dinner"
+    ]
+  },
+  {
+    "name": "Cauliflower rice",
+    "group": "vegetables",
+    "macros": {
+      "kcal": 25,
+      "p": 2.0,
+      "c": 5.0,
+      "f": 0.3
+    },
+    "portion": 150,
+    "unit": "g",
+    "tags": [
+      "low_carb",
+      "vegan"
+    ],
+    "slots": [
+      "dinner",
+      "lunch"
+    ]
+  },
+  {
+    "name": "Tomato soup (homemade)",
+    "group": "soup",
+    "macros": {
+      "kcal": 45,
+      "p": 1.5,
+      "c": 9.0,
+      "f": 0.6
+    },
+    "portion": 300,
+    "unit": "g",
+    "tags": [
+      "vegan"
+    ],
+    "slots": [
+      "dinner",
+      "lunch"
+    ]
+  },
+  {
+    "name": "Minestrone soup",
+    "group": "soup",
+    "macros": {
+      "kcal": 70,
+      "p": 3.0,
+      "c": 12.0,
+      "f": 1.2
+    },
+    "portion": 300,
+    "unit": "g",
+    "tags": [
+      "vegan"
+    ],
+    "slots": [
+      "dinner",
+      "lunch"
+    ]
+  },
+  {
+    "name": "Stir-fried shrimp & veggies",
+    "group": "prepared",
+    "macros": {
+      "kcal": 120,
+      "p": 16.0,
+      "c": 8.0,
+      "f": 3.0
+    },
+    "portion": 250,
+    "unit": "g",
+    "tags": [
+      "high_protein"
+    ],
+    "slots": [
+      "dinner",
+      "lunch"
+    ]
+  },
+  {
+    "name": "Turkey burger patty",
+    "group": "meat",
+    "macros": {
+      "kcal": 165,
+      "p": 23.0,
+      "c": 0.0,
+      "f": 7.0
+    },
+    "portion": 120,
+    "unit": "g",
+    "tags": [
+      "lean"
+    ],
+    "slots": [
+      "dinner",
+      "lunch"
+    ]
+  },
+  {
+    "name": "Mashed potatoes (no butter)",
+    "group": "prepared",
+    "macros": {
+      "kcal": 87,
+      "p": 2.0,
+      "c": 19.0,
+      "f": 0.2
+    },
+    "portion": 200,
+    "unit": "g",
+    "tags": [
+      "comfort"
+    ],
+    "slots": [
+      "dinner",
+      "lunch"
+    ]
+  },
+  {
+    "name": "Quinoa salad",
+    "group": "prepared",
+    "macros": {
+      "kcal": 150,
+      "p": 6.0,
+      "c": 22.0,
+      "f": 4.0
+    },
+    "portion": 250,
+    "unit": "g",
+    "tags": [
+      "vegan"
+    ],
+    "slots": [
+      "dinner",
+      "lunch"
+    ]
+  },
+  {
+    "name": "Roasted zucchini & eggplant",
+    "group": "vegetables",
+    "macros": {
+      "kcal": 60,
+      "p": 2.0,
+      "c": 8.0,
+      "f": 2.0
+    },
+    "portion": 200,
+    "unit": "g",
+    "tags": [
+      "vegan"
+    ],
+    "slots": [
+      "dinner",
+      "lunch"
+    ]
+  },
+  {
+    "name": "Vegetable curry",
+    "group": "prepared",
+    "macros": {
+      "kcal": 120,
+      "p": 3.0,
+      "c": 14.0,
+      "f": 6.0
+    },
+    "portion": 250,
+    "unit": "g",
+    "tags": [
+      "vegan"
+    ],
+    "slots": [
+      "dinner",
+      "lunch"
+    ]
+  },
+  {
+    "name": "Rice noodles with tofu",
+    "group": "prepared",
+    "macros": {
+      "kcal": 150,
+      "p": 7.0,
+      "c": 24.0,
+      "f": 3.0
+    },
+    "portion": 250,
+    "unit": "g",
+    "tags": [
+      "vegan"
+    ],
+    "slots": [
+      "dinner",
+      "lunch"
+    ]
+  },
+  {
+    "name": "Light cream cheese",
+    "group": "dairy",
+    "macros": {
+      "kcal": 189,
+      "p": 8.0,
+      "c": 4.0,
+      "f": 16.0
+    },
+    "portion": 30,
+    "unit": "g",
+    "tags": [
+      "spread"
+    ],
+    "slots": [
+      "dinner",
+      "snack"
+    ]
+  },
+  {
+    "name": "Grilled vegetables mix",
+    "group": "vegetables",
+    "macros": {
+      "kcal": 70,
+      "p": 2.0,
+      "c": 10.0,
+      "f": 2.0
+    },
+    "portion": 200,
+    "unit": "g",
+    "tags": [
+      "vegan"
+    ],
+    "slots": [
+      "dinner",
+      "lunch"
+    ]
+  },
+  {
+    "name": "Nuts mix (almonds, cashews, walnuts)",
+    "group": "nuts",
+    "macros": {
+      "kcal": 607,
+      "p": 16.0,
+      "c": 21.0,
+      "f": 55.0
+    },
+    "portion": 28,
+    "unit": "g",
+    "tags": [
+      "vegan",
+      "snack"
+    ],
+    "slots": [
+      "snack"
+    ]
+  },
+  {
+    "name": "Apple with almond butter",
+    "group": "prepared",
+    "macros": {
+      "kcal": 220,
+      "p": 5.0,
+      "c": 26.0,
+      "f": 12.0
+    },
+    "portion": 180,
+    "unit": "g",
+    "tags": [
+      "snack"
+    ],
+    "slots": [
+      "snack"
+    ]
+  },
+  {
+    "name": "Cottage cheese & berries",
+    "group": "prepared",
+    "macros": {
+      "kcal": 150,
+      "p": 16.0,
+      "c": 10.0,
+      "f": 4.0
+    },
+    "portion": 200,
+    "unit": "g",
+    "tags": [
+      "high_protein"
+    ],
+    "slots": [
+      "snack",
+      "breakfast"
+    ]
+  },
+  {
+    "name": "Rice cakes with peanut butter",
+    "group": "prepared",
+    "macros": {
+      "kcal": 210,
+      "p": 6.0,
+      "c": 18.0,
+      "f": 12.0
+    },
+    "portion": 40,
+    "unit": "g",
+    "tags": [
+      "snack"
+    ],
+    "slots": [
+      "snack",
+      "breakfast"
+    ]
   }
 ]
