@@ -1,5 +1,7 @@
 # 🥗 Meal Plan Generator
 
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://meal-plan-generator23.streamlit.app)
+
 [![Python](https://img.shields.io/badge/Python-3.10%20–%203.13-blue)](https://www.python.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.x-FF4B4B.svg)](https://streamlit.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
