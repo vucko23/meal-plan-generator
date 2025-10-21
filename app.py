@@ -382,7 +382,23 @@ def macro_targets(total_kcal, protein_pct, carbs_pct, fat_pct):
     protein_kcal = total_kcal * protein_pct
     carbs_kcal = total_kcal * carbs_pct
     fat_kcal = total_kcal * fat_pct
-    return {"protein_g": protein_kcal/4.0, "carbs_g": carbs_kcal/4.0, "fat_g": fat_kcal/9.0}
+
+    protein_g = protein_kcal / 4.0
+    carbs_g = carbs_kcal / 4.0
+    fat_g = fat_kcal / 9.0
+
+    targets = {
+        "kcal": float(total_kcal),
+        "p": protein_g,
+        "c": carbs_g,
+        "f": fat_g,
+        "protein_g": protein_g,
+        "carbs_g": carbs_g,
+        "fat_g": fat_g,
+    }
+    # cache a copy for downstream lookups that expect a nested "target" mapping
+    targets["target"] = {k: targets[k] for k in ("kcal", "p", "c", "f")}
+    return targets
 
 
 def score_meal(meal, targets):
@@ -402,19 +418,31 @@ def score_meal(meal, targets):
 
 
 def build_meal(foods, targets, max_items_per_meal=3):
+    if not foods:
+        return []
+
+    pool = list(foods)
     best_meal, best_score = None, 1e9
+
     for _ in range(200):
-        candidates = foods
-        k = min(max_items_per_meal, max(2, int(random.gauss(2.5, 0.6))))
-        if len(candidates) < k:
-            candidates = foods
-        meal_items = random.sample(candidates, k=k)
-        if random.random() < 0.35 and len(candidates) > 0:
-            meal_items.append(random.choice(candidates))
+        if not pool:
+            break
+
+        spread = max(2, int(random.gauss(2.5, 0.6)))
+        k = max(1, min(max_items_per_meal, spread, len(pool)))
+
+        if k == 0:
+            continue
+
+        meal_items = random.sample(pool, k=k)
+        if random.random() < 0.35 and pool and len(meal_items) < max_items_per_meal:
+            meal_items.append(random.choice(pool))
+
         score = score_meal(meal_items, targets)
         if score < best_score:
             best_score, best_meal = score, meal_items
-    return best_meal
+
+    return best_meal or []
 
 
 def _norm_food(f):
@@ -802,8 +830,12 @@ if _saved:
 def generate_plan(foods, days, prefs):
     macros = macro_targets(
         prefs["effective_kcal"], prefs["protein_pct"], prefs["carbs_pct"], prefs["fat_pct"])
-    macros["kcal_meal"] = prefs["effective_kcal"] / prefs["meals"]
-    macros["meals"] = prefs["meals"]
+    meals_count = max(1, prefs["meals"])
+    macros["kcal_meal"] = prefs["effective_kcal"] / meals_count
+    macros["p_meal"] = macros["p"] / meals_count
+    macros["c_meal"] = macros["c"] / meals_count
+    macros["f_meal"] = macros["f"] / meals_count
+    macros["meals"] = meals_count
 
     pool = filter_by_diet(foods, prefs["diet"])
 
@@ -825,25 +857,45 @@ def generate_plan(foods, days, prefs):
     # build a day using older approach (uniform meals)
     def build_day(foods, targets, meals=4, max_items_per_meal=3):
         best_day, best_score = None, 1e9
+        foods_list = list(foods)
+
         for _ in range(400):
             day, total_score, used = [], 0, set()
+            success = True
+
             for _m in range(meals):
-                candidates = [f for f in foods if f["name"]
-                              not in used or random.random() < 0.4]
-                k = min(max_items_per_meal, max(
-                    2, int(random.gauss(2.5, 0.6))))
-                if len(candidates) < k:
-                    candidates = foods
+                candidates = [
+                    f for f in foods_list if f["name"] not in used or random.random() < 0.4
+                ]
+                if not candidates:
+                    candidates = list(foods_list)
+
+                if not candidates:
+                    success = False
+                    break
+
+                spread = max(2, int(random.gauss(2.5, 0.6)))
+                k = max(1, min(max_items_per_meal, spread, len(candidates)))
+                if k == 0:
+                    success = False
+                    break
+
                 meal_items = random.sample(candidates, k=k)
-                if random.random() < 0.35 and len(candidates) > 0:
+                if random.random() < 0.35 and candidates and len(meal_items) < max_items_per_meal:
                     meal_items.append(random.choice(candidates))
+
                 total_score += score_meal(meal_items, targets)
                 for it in meal_items:
                     used.add(it["name"])
                 day.append(meal_items)
+
+            if not success or len(day) != meals:
+                continue
+
             if total_score < best_score:
                 best_score, best_day = total_score, day
-        return best_day
+
+        return best_day or []
 
     plan = []
     for _ in range(prefs["days"]):
@@ -856,8 +908,12 @@ def generate_plan(foods, days, prefs):
 # Compute pool & macros for reuse
 _macros_for_pool = macro_targets(
     prefs["effective_kcal"], prefs["protein_pct"], prefs["carbs_pct"], prefs["fat_pct"])
-_macros_for_pool["kcal_meal"] = prefs["effective_kcal"]/prefs["meals"]
-_macros_for_pool["meals"] = prefs["meals"]
+_meals_count = max(1, prefs["meals"])
+_macros_for_pool["kcal_meal"] = prefs["effective_kcal"]/_meals_count
+_macros_for_pool["p_meal"] = _macros_for_pool["p"] / _meals_count
+_macros_for_pool["c_meal"] = _macros_for_pool["c"] / _meals_count
+_macros_for_pool["f_meal"] = _macros_for_pool["f"] / _meals_count
+_macros_for_pool["meals"] = _meals_count
 
 _pool = filter_by_diet(foods, prefs["diet"])
 if prefs["exclude_tags"]:
@@ -1467,28 +1523,30 @@ with tab_plan:
                                     qty_now = float(
                                         st.session_state.get(qkey, 1.0))
 
+                                    base_item = _norm_food(new_item)
+                                    replacement = dict(base_item)
+                                    replacement["macros"] = dict(
+                                        base_item.get("macros", {}))
+                                    replacement["tags"] = list(
+                                        base_item.get("tags", []))
+                                    replacement["group"] = base_item.get(
+                                        "group", item.get("group", ""))
+                                    replacement["portion"] = base_item.get(
+                                        "portion", item.get("portion", 0))
+                                    replacement["unit"] = base_item.get(
+                                        "unit", item.get("unit", ""))
+                                    replacement["portion_g"] = new_item.get(
+                                        "portion_g",
+                                        item.get(
+                                            "portion_g",
+                                            item.get("portion", replacement.get("portion", 0))
+                                        )
+                                    )
+
                                     if isinstance(st.session_state["active_plan"][d_idx-1][m_idx-1], dict):
-                                        st.session_state["active_plan"][d_idx-1][m_idx-1]["items"][i_idx] = {
-                                            "name": new_item.get("name", ""),
-                                            "kcal": float(new_item.get("kcal", 0)),
-                                            "protein": float(new_item.get("protein", 0)),
-                                            "carbs": float(new_item.get("carbs", 0)),
-                                            "fat": float(new_item.get("fat", 0)),
-                                            "portion_g": new_item.get("portion_g", item.get("portion_g", item.get("portion", 0))),
-                                            "tags": new_item.get("tags", []),
-                                            "group": new_item.get("group", item.get("group", "")),
-                                        }
+                                        st.session_state["active_plan"][d_idx-1][m_idx-1]["items"][i_idx] = replacement
                                     else:
-                                        st.session_state["active_plan"][d_idx-1][m_idx-1][i_idx] = {
-                                            "name": new_item.get("name", ""),
-                                            "kcal": float(new_item.get("kcal", 0)),
-                                            "protein": float(new_item.get("protein", 0)),
-                                            "carbs": float(new_item.get("carbs", 0)),
-                                            "fat": float(new_item.get("fat", 0)),
-                                            "portion_g": new_item.get("portion_g", item.get("portion_g", item.get("portion", 0))),
-                                            "tags": new_item.get("tags", []),
-                                            "group": new_item.get("group", item.get("group", "")),
-                                        }
+                                        st.session_state["active_plan"][d_idx-1][m_idx-1][i_idx] = replacement
 
                                     st.session_state[qkey] = qty_now
                                     st.toast("✨ Swapped" if lang_choice ==
